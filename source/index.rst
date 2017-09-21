@@ -3,19 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to cdemo-api-doc's documentation!
+Welcome to cDemo API Docs!
 =========================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-
-   hello.md
+   :glob:
 
 
-Indices and tables
-==================
+   record_api
+   markdown_example
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. Indices and tables
+.. ==================
+
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
