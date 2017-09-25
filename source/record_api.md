@@ -13,11 +13,16 @@
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
-**1. Retrieve Record Details**
+## API Methods
 
->* Method: records (HTTP METHOD: GET)
->* Example: 
+### Retrieve Record Details
+
+All queries sent to backend:
+
+- Method: records (HTTP METHOD: GET)
+- Type of query: Record Data
+- Return Type: JSON string of matched records.
+- Example: 
  https://test.cdemo.com/api/latest/records?access_token=xxxx&inspection_id=xxxx,xxxx&lang=EN,FR
->* Type of query: Record Data
->* Return Type: JSON string of matched records.
 
+The interface of BackEnd works with the principe RESTfull
