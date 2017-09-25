@@ -13,10 +13,11 @@
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
-**1) Retrieve Record Details**
+**1. Retrieve Record Details**
 
 >* Method: records (HTTP METHOD: GET)
->* Example: https://test.cdemo.com/api/latest/records?access_token=xxxx&inspection_id=xxxx,xxxx&lang=EN,FR
+>* Example: 
+ https://test.cdemo.com/api/latest/records?access_token=xxxx&inspection_id=xxxx,xxxx&lang=EN,FR
 >* Type of query: Record Data
 >* Return Type: JSON string of matched records.
 
