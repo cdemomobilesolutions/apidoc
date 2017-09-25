@@ -26,3 +26,7 @@ All queries sent to backend:
  https://test.cdemo.com/api/latest/records?access_token=xxxx&inspection_id=xxxx,xxxx&lang=EN,FR
 
 The interface of BackEnd works with the principe RESTfull
+
+| Route             | Method |
+|-------------------|--------|
+| http://[...]/item	| GET    |
