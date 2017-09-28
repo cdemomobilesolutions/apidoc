@@ -128,7 +128,34 @@ Retrieve Unique Record ID's (Inspection ID's)
 vin_decode_status
     Status and Explanation:
 
-    I: Indicates VIN Decoding is in progress.
-    ER: VIN was probably valid, but decoding failed for other reason (usually bad data return / unable to decode from Chrome)
-    IV: Indicates non-Valid VIN and VIN-Decoding not used. This will occur if VIN is incorrect or if it is a pre-1981 VIN
-    SC: Is normal status indicating valid-VIN and good Decode
+    - I: Indicates VIN Decoding is in progress.
+    - ER: VIN was probably valid, but decoding failed for other reason (usually bad data return / unable to decode from Chrome)
+    - IV: Indicates non-Valid VIN and VIN-Decoding not used. This will occur if VIN is incorrect or if it is a pre-1981 VIN
+    - SC: Is normal status indicating valid-VIN and good Decode
+
+
+**Sample Usage**
+
++------------------+-------------------------------+
+| Token            | token=xxxxxx                  |
++------------------+-------------------------------+
+| user_id          | user_id=cdemotest             |
++------------------+-------------------------------+
+| party_id         | party_id=10                   |
++------------------+-------------------------------+
+| date_from        | date_from=1372060916          |
++------------------+-------------------------------+
+| date_to          | date_to=1372061234            |
++------------------+-------------------------------+
+| update_date_from | update_date_from=1372060916   |
++------------------+-------------------------------+
+| update_date_to   | update_date_to=1372061234     |
++------------------+-------------------------------+
+| cat_id           | cat_id=2                      |
++------------------+-------------------------------+
+| type_id          | type_id=3                     |
++------------------+-------------------------------+
+| status           | status=1,2                    |
++------------------+-------------------------------+
+| vin_decode_status| vin_decode_status=SC          |
++------------------+-------------------------------+
