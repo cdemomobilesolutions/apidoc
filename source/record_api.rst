@@ -33,11 +33,10 @@ All queries sent to backend:
 
 The interface of BackEnd works with the principe RESTfull
 
-+---------------+----------------+-----------+-------------------+
-| Parameters    | Is Mandatory   | Notes     | Sample Usuage     |
-+===============+================+===========+===================+
-| Inspection ID | No             | column 3  |column 3           |
-+---------------+----------------+-----------+-------------------+
-| lang          | No             | column 3  |column 3           |
-+---------------+----------------+-----------+-----------+
+ ==============  =======
+ Request Header   Value
+ ==============  =======
+ St2-Api-Key      Y2YyYWJkOGFkNDgxYTdiZDI0ZDdjNzU1NmE0NzA2ZWJiYTBlNTE5YmJlOTg1ODU0MzNmNjc3MzcxNDE0MDFhZA
+ content-type     application/json
+ ==============  =======
 
