@@ -33,11 +33,11 @@ All queries sent to backend:
 
 The interface of BackEnd works with the principe RESTfull
 
-+---------------+----------------+-----------+-----------+
-| Parameters    | Is Mandatory   | Notes     | Notes     |
-+===============+================+===========+===========+
-| Inspection ID | No             | column 3  |column 3   |
-+---------------+----------------+-----------+-----------+
-| lang          | No             | column 3  |column 3   |
++---------------+----------------+-----------+-------------------+
+| Parameters    | Is Mandatory   | Notes     | Sample Usuage     |
++===============+================+===========+===================+
+| Inspection ID | No             | column 3  |column 3           |
++---------------+----------------+-----------+-------------------+
+| lang          | No             | column 3  |column 3           |
 +---------------+----------------+-----------+-----------+
 
