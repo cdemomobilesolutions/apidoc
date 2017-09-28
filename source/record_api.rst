@@ -45,3 +45,10 @@ a short sentence  second cell
 a much longer     bottom right
   sentence
 ================  ============
+
++------------------+--------------+
+| a short sentence | second cell  |
++------------------+--------------+
+| a much longer    | bottom right |
+| sentence         |              |
++------------------+--------------+
