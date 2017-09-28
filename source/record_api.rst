@@ -33,22 +33,22 @@ All queries sent to backend:
 
 The interface of BackEnd works with the principe RESTfull
 
- ==============  =======
- Request Header   Value
- ==============  =======
- St2-Api-Key      Y2YyYWJkOGFkNDgxYTdiZDI0ZDdjNzU1NmE0NzA2ZWJiYTBlNTE5YmJlOTg1ODU0MzNmNjc3MzcxNDE0MDFhZA
- content-type     application/json
- ==============  =======
-
-================  ============
-a short sentence  second cell
-a much longer     bottom right
-  sentence
-================  ============
-
-+-----------------------+--------------+
-| a short sentence      | second cell  |
-+-----------------------+--------------+
-| a much longer <br/>   | bottom right |
-| sentence              |              |
-+-----------------------+--------------+
++-----------------------+---------------+----------------------------+
+| Parameters            | Is Mandatory  | Notes                      |
++-----------------------+---------------+----------------------------+
+| Token                 | Yes           | a access token is required |
+|                       |               | for all of the API's       |
+|                       |               | request                    |
++-----------------------+---------------+----------------------------+
+| inspection_id         | No            | inspection_id of record.   |
+|                       |               | To pull multiple records   |
+|                       |               | on a single API call,      |
+|                       |               | concatenate inspection ID's|
+|                       |               | with comma such as         |
+|                       |               | inspection_id1,            |
+|                       |               | inspection_id2             |
++-----------------------+---------------+----------------------------+
+| vin_code              | No            | inspection_id              |
++-----------------------+---------------+----------------------------+
+| lang                  | No            | inspection_id              |
++-----------------------+---------------+----------------------------+
