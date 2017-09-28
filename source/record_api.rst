@@ -48,7 +48,13 @@ The interface of BackEnd works with the principe RESTfull
 |                       |               | inspection_id1,            |
 |                       |               | inspection_id2             |
 +-----------------------+---------------+----------------------------+
-| vin_code              | No            | inspection_id              |
+| vin_code              | No            | vin code of vehicle. To    |
+|                       |               | pull multiple records on   |
+|                       |               | a single API call,         |
+|                       |               | concatenate vin codes with |
+|                       |               | comma(,) such as vin_code_1|
+|                       |               | ,vin_code_2                |
 +-----------------------+---------------+----------------------------+
-| lang                  | No            | inspection_id              |
+| lang                  | No            | language flag such as      |
+|                       |               | lang=EN or lang=EN,FR      |
 +-----------------------+---------------+----------------------------+
