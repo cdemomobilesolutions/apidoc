@@ -169,3 +169,7 @@ vin_decode_status
 +------------------+-------------------------------+
 | vin_decode_status| vin_decode_status=SC          |
 +------------------+-------------------------------+
+
+Query for inspection_ids:
+    If  inspection_id parameter is missing from the request, Records APIs will try to query inspections IDs as defined by other query parameters.
+        You can pass one or more of these query parameters to cDemo system. The default filter is the party_id associated with the access token. Currently cDemo system has limited the returned inspection_ids to 1,000 for each query (latest records first).  To use this query API efficiently, please supply as much parameters as you can.
