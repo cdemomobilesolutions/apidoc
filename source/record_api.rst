@@ -30,14 +30,14 @@ All queries sent to backend:
 
 The interface of BackEnd works with the principe RESTfull
 
-+------------+------------+-----------+
-| Parameters   | Is Mandatory   | Notes  |
-+============+============+===========+
-| body row 1 | column 2   | column 3  |
-+------------+------------+-----------+
++------------+----------------+-----------+
+| Parameters | Is Mandatory   | Notes     |
++============+================+===========+
+| body row 1 | column 2       | column 3  |
++------------+----------------+-----------+
 
-=================       ======
-Route	                Method
-=================       ======
-http://[...]/item	     GET
-=================       ======
+=================       =============       =============
+Parameters	             Is Mandatory          Notes
+=================       =============       =============
+Inspection ID       	     GET
+=================       =============       =============
