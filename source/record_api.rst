@@ -178,6 +178,8 @@ Query for inspection_ids:
 Sample Returns
 ===============
 
+Sample Return for querying inspection IDs:
+
 .. code-block:: json
 
     {
