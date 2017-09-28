@@ -76,8 +76,13 @@ The interface of BackEnd works with the principe RESTfull
 +---------------+-------------------------------+
 
 
+
+
+
+
+
 Retrieve Unique Record ID's (Inspection ID's)
-----------------------------------------------
+==============================================
 
 +-----------------------+---------------+---------------------------------------+
 | Parameters            | Is Mandatory  | Notes                                 |
