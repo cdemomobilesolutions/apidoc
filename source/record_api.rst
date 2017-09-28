@@ -22,18 +22,22 @@ Retrieve Record Details
 
 All queries sent to backend:
 
-- Method: records (HTTP METHOD: GET)
-- Type of query: Record Data
+- Method: records **(HTTP METHOD: GET)**
+- Type of query: **Record Data**
 - Return Type: JSON string of matched records.
 - Example: 
 -  https://test.cdemo.com/api/latest/records?access_token=xxxx&inspection_id=xxxx,xxxx&lang=EN,FR
 
 The interface of BackEnd works with the principe RESTfull
 
-+----------------+------------------+-------------+-------------------+
-| Parameters | Is Mandatory| Notes  | Sample Usage|
-+================+==================+=============+===================+
-| inspection_id  | No               |              |                  |
-+----------------+------------------+------------+-------------------+
-| body row 1     | column 2         | column 3   | column 3          | 
-+----------------+------------------+------------+-------------------+
++------------+------------+-----------+
+| Parameters   | Is Mandatory   | Notes  |
++============+============+===========+
+| body row 1 | column 2   | column 3  |
++------------+------------+-----------+
+
+=================       ======
+Route	                Method
+=================       ======
+http://[...]/item	     GET
+=================       ======
