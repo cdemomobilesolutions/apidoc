@@ -74,3 +74,56 @@ The interface of BackEnd works with the principe RESTfull
 +---------------+-------------------------------+
 | lang          | lang=EN,FR                    |
 +---------------+-------------------------------+
+
+
+Retrieve Unique Record ID's (Inspection ID's)
+----------------------------------------------
+
++-----------------------+---------------+---------------------------------------+
+| Parameters            | Is Mandatory  | Notes                                 |
++=======================+===============+=======================================+
+| Token                 | Yes           | a access token is required            |
+|                       |               | for all of the API's                  |
+|                       |               | request                               |
++-----------------------+---------------+---------------------------------------+
+| user_id               | No            | cDemo username                        |
++-----------------------+---------------+---------------------------------------+
+| party_id              | No            | cDemo party_id                        |
++-----------------------+---------------+---------------------------------------+
+| date_from             | No            | start date of record created in       |
+|                       |               | milliseconds (the difference, measured|
+|                       |               | in millisecond, between the current   |
+|                       |               | time and midnight, January 1,1970 UTC)|
++-----------------------+---------------+---------------------------------------+
+| date_to               | No            | start date of record created in       |
+|                       |               | milliseconds (the difference, measured|
+|                       |               | in millisecond, between the current   |
+|                       |               | time and midnight, January 1,1970 UTC)|
++-----------------------+---------------+---------------------------------------+
+| update_date_from      | No            | start date of record UPDATED date in  |
+|                       |               | milliseconds (the difference, measured|
+|                       |               | in millisecond, between the current   |
+|                       |               | time and midnight, January 1,1970 UTC)|
++-----------------------+---------------+---------------------------------------+
+| update_date_to        | No            | start date of record UPDATED date in  |
+|                       |               | milliseconds (the difference, measured|
+|                       |               | in millisecond, between the current   |
+|                       |               | time and midnight, January 1,1970 UTC)|
++-----------------------+---------------+---------------------------------------+
+| cat_id                | No            | cDemo category ID                     |
++-----------------------+---------------+---------------------------------------+
+| type_id               | No            | cDemo record type ID                  |
++-----------------------+---------------+---------------------------------------+
+| status                | No            | status code: 0 - In-Progress, 1 -     |
+|                       |               | Available and 2 - Archived            |
++-----------------------+---------------+---------------------------------------+
+| vin_decode_status     | No            |  See Below                            |
++-----------------------+---------------+---------------------------------------+
+
+vin_decode_status
+    Status and Explanation:
+
+    I: Indicates VIN Decoding is in progress.
+    ER: VIN was probably valid, but decoding failed for other reason (usually bad data return / unable to decode from Chrome)
+    IV: Indicates non-Valid VIN and VIN-Decoding not used. This will occur if VIN is incorrect or if it is a pre-1981 VIN
+    SC: Is normal status indicating valid-VIN and good Decode
