@@ -1,21 +1,24 @@
-=====
-Grid table
-=====
+===========
+Record API
+===========
 
-## Record API
+Setup API Account
+=================
+- Please contact cDemo support
 
-### API End Point
-
+API End Points
+=================
 +------------+-----------------------------------+ 
 | Sandbox    | http://test.cdemo.com/api/latest/ | 
 +============+===================================+
 | Production | http://api.cdemo.com/api/latest/  |
 +------------+-----------------------------------+
 
+API Methods
+=================
 
-## API Methods
-
-### Retrieve Record Details
+Retrieve Record Details
+-----------------------
 
 All queries sent to backend:
 
@@ -27,10 +30,10 @@ All queries sent to backend:
 
 The interface of BackEnd works with the principe RESTfull
 
-+----------------+------------------+------------+-------------------+ 
-| **Parameters** | **Is Mandatory** | **Notes**  | **Sample Usage**  |
-+================+==================+============+===================+
-| inspection_id  | No               | inspection_id of record. To pull multiple records on a single API call, concatenate inspection IDs with comma (,) such as inspection_id1,inspection_id2  | inspection_id=inspection_id=20140120cfwejboi,20140120bwtmncis         | 
++----------------+------------------+-------------+-------------------+
+| Parameters | Is Mandatory| Notes  | Sample Usage|
++================+==================+=============+===================+
+| inspection_id  | No               |              |                  |
 +----------------+------------------+------------+-------------------+
 | body row 1     | column 2         | column 3   | column 3          | 
 +----------------+------------------+------------+-------------------+
