@@ -84,6 +84,16 @@ The interface of BackEnd works with the principe RESTfull
 Retrieve Unique Record ID's (Inspection ID's)
 ==============================================
 
+:Method:
+    records **(HTTP METHOD: GET)**
+:Type of query:
+    inspection_ids
+:Return Type:
+    JSON string of matched inspection IDs
+:Example:
+    https://test.cdemo.com/api/latest/records/inspection-ids?access_token=xxxxx&status=1
+
+
 +-----------------------+---------------+---------------------------------------+
 | Parameters            | Is Mandatory  | Notes                                 |
 +=======================+===============+=======================================+
