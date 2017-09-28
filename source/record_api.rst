@@ -58,3 +58,18 @@ The interface of BackEnd works with the principe RESTfull
 | lang                  | No            | language flag such as      |
 |                       |               | lang=EN or lang=EN,FR      |
 +-----------------------+---------------+----------------------------+
+
+
+**Sample Usage**
++---------------+-------------------------------+
+| Token         | token=xxxxxx                  |
++---------------+-------------------------------+
+| inspection_id | inspection_id=inspection_id=  |
+|               | 20140120cfwejboi,             |
+|               | 20140120bwtmncis              |
++---------------+-------------------------------+
+| vin_code      | vin_code=3C6TRVAG4EE103634,   |
+|               | KM8JT3AB1DU752443             |
++---------------+-------------------------------+
+| lang          | lang=EN,FR                    |
++---------------+-------------------------------+
