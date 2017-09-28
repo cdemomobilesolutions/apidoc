@@ -35,7 +35,7 @@ The interface of BackEnd works with the principe RESTfull
 
 +-----------------------+---------------+----------------------------+
 | Parameters            | Is Mandatory  | Notes                      |
-+-----------------------+---------------+----------------------------+
++=======================+===============+============================+
 | Token                 | Yes           | a access token is required |
 |                       |               | for all of the API's       |
 |                       |               | request                    |
@@ -61,6 +61,7 @@ The interface of BackEnd works with the principe RESTfull
 
 
 **Sample Usage**
+
 +---------------+-------------------------------+
 | Token         | token=xxxxxx                  |
 +---------------+-------------------------------+
