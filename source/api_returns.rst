@@ -23,13 +23,13 @@ Sample Return for Record Details
 
 Querrying the record details API will return a large json response. The response is mapped into 7 sections. The sections are:
 
--Record Attributes
--Chrome Equipments
--Chrome Options
--Inspection Points
--Chrome Consumer Info
--Inspsection ID
--cDemo Record
+- Record Attributes
+- Chrome Equipments
+- Chrome Options
+- Inspection Points
+- Chrome Consumer Info
+- Inspsection ID
+- cDemo Record
 
 Please use the navigator on the left to go to the section you are looking for.
 
