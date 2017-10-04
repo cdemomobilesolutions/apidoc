@@ -313,7 +313,7 @@ Chrome Consumer Info
 +---------------------+------------------------------------+---------------------------------------------------------------------------------+
 
 
-Chrome Consumer Info
+Chrome Options
 ======================
 
 Client_confirmed, pkg_flag, installed-flag and standard_flag will always be true/false answers.
@@ -322,7 +322,7 @@ Client_confirmed, pkg_flag, installed-flag and standard_flag will always be true
 .. code-block:: json
 
     {
-        "chrome_consumer_info":
+        "chrome_options":
 
             [
                 "lang": "EN",
