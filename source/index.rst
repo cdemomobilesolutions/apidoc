@@ -12,9 +12,7 @@ Welcome to cDemo API Docs!
 
 
    record_api
-   store_api
-   markdown_example
-   test
+   api_returns
 
 .. Indices and tables
 .. ==================
