@@ -173,7 +173,7 @@ Chrome Equipment
 +                     +-------------------------------------------------------+
 |                     | Cigarette lighter                                     |
 +---------------------+-------------------------------------------------------+
-| SAFETY FEATURES     | Four-wheel anti-lock brake system                     |
+| Safety Features     | Four-wheel anti-lock brake system                     |
 +                     +-------------------------------------------------------+
 |                     | Front outboard shoulder belt height adjusters         |
 +                     +-------------------------------------------------------+
@@ -184,3 +184,23 @@ Chrome Equipment
 |                     | Side door guard beams                                 |
 +---------------------+-------------------------------------------------------+
 
+cDemo Record
+==================
+
+.. code-block:: json
+
+    {
+        "cdemo_record":
+
+            [
+                "lang": "EN",
+                "photo_count": 7,
+                "create_date": "Sep 29, 2017 6:19:44 PM",
+                "days_in_inventory": 0,
+                "last_mod_by": "",
+                "status_code": 1,
+                .
+                .
+                .
+            ]
+    },
