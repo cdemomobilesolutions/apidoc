@@ -25,13 +25,13 @@ Record Attributes
 -------------------
 
 .. code-block:: json
-
+"record_attributes":{
     {
-    "attribute_key": "VIN",
-    "language": "EN",
-    "attribute_value": "1GCEC14W1VZ159730"
+        "attribute_key": "VIN",
+        "language": "EN",
+        "attribute_value": "1GCEC14W1VZ159730"
     },
-
+}
 
 
 
