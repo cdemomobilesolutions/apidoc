@@ -21,7 +21,7 @@ Sample Return for querying inspection IDs:
 Sample Return for Record Details
 ==========================================
 
-Querrying the record details API will return a large json response. The response is mapped into 7 sections. The sections are:
+Querrying the record details API will return a large json response. The response is mapped into 7 sections:
 
 - Record Attributes
 - Chrome Equipments
@@ -163,5 +163,24 @@ Chrome Equipment
 +                     +-------------------------------------------------------+
 |                     | Removable tailgate with W/T decal                     |
 +---------------------+-------------------------------------------------------+
-
+| Interior            | Scotchgard Fabric Protector on all cloth surfaces     |
++                     +-------------------------------------------------------+
+|                     | Simulated leather steering wheel                      |
++                     +-------------------------------------------------------+
+|                     | Heater/defogger w/side window defoggers               |
++                     +-------------------------------------------------------+
+|                     | Dual dash cupholders                                  |
++                     +-------------------------------------------------------+
+|                     | Cigarette lighter                                     |
++---------------------+-------------------------------------------------------+
+| SAFETY FEATURES     | Four-wheel anti-lock brake system                     |
++                     +-------------------------------------------------------+
+|                     | Front outboard shoulder belt height adjusters         |
++                     +-------------------------------------------------------+
+|                     | Head restraints, front seat                           |
++                     +-------------------------------------------------------+
+|                     | Daytime running lamp                                  |
++                     +-------------------------------------------------------+
+|                     | Side door guard beams                                 |
++---------------------+-------------------------------------------------------+
 
