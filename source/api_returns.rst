@@ -39,7 +39,6 @@ Record Attributes
 .. code-block:: json
 
     {
-        "record_attributes":
             [
                 "attribute_key": "VIN",
                 "language": "EN",
