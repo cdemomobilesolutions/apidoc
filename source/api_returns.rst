@@ -391,3 +391,66 @@ Client_confirmed, pkg_flag, installed-flag and standard_flag will always be true
 +                               +------------------------------------------------+-------------------------------------+
 |                               | ENGINE HOUR METER                              |                                     |
 +-------------------------------+------------------------------------------------+-------------------------------------+
+
+
+
+Inspection Points
+======================
+
+
+.. code-block:: json
+
+    {
+        "inspection_points":
+
+            [
+                "blank_photo_flag": false,
+                "language": "EN",
+                "question_text": "Do you want to use the default value for Listing Type?",
+                "last_mod_date": "Sep 29, 2017 6:22:05 PM",
+                "stage_text": "Listing Information",
+                "photo_point_flag": false,
+                "damage_flag": false,
+                "stage_order": 1,
+                "secondary_question_type_id": 0,
+                "option_flag": false,
+                "stock_photo_flag": false,
+                "answer_parent": "",
+                "photo_available_flag": false,
+                "question_order": 1,
+                "answer": "NO",
+                "video_point_flag": false,
+                "parent_question_id": 0,
+                "question_type_id": 2765,
+                "question_text_short": "Change Default Listing Type",
+                "question_id": 5802
+            ]
+            [
+                "original_photo_url": "http://static.cdemo.com/65325943/1506709202849.jpg",
+                "stage_text": "Vehicle Information",
+                "photo_point_flag": true,
+                "stage_order": 2,
+                "answer_parent": "",
+                "photo_available_flag": true,
+                "damage_flag": false,
+                "photo_processed": 1,
+                "question_type_id": 1,
+                "blank_photo_flag": false,
+                "seo_photo_name": "automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg",
+                "question_text": "PRIMARY PHOTO. Turn your Device horizontal to the left and take photo.",
+                "video_point_flag": false,
+                "question_order": 5,
+                "answer": "",
+                "secondary_question_type_id": 0,
+                "option_flag": false,
+                "stock_photo_flag": false,
+                "parent_question_id": 0,
+                "question_text_short": "Primary Listing Photo",
+                "photo_url": "http://static.cdemo.com/65325943/1024/automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg",
+                "last_mod_date": "Sep 29, 2017 6:23:12 PM",
+                "language": "EN",
+                "photo_uploaded": 1,
+                "question_id": 1
+            ]
+    },
+
