@@ -45,7 +45,7 @@ Record Attributes
                 "language": "EN",
                 "attribute_value": "1GCEC14W1VZ159730"
             ]
-    },
+    }
 
 
 
