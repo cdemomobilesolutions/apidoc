@@ -40,7 +40,6 @@ Record Attributes
 
     {
         "record_attributes":
-
             [
                 "attribute_key": "VIN",
                 "language": "EN",
@@ -402,7 +401,6 @@ Inspection Points
 
     {
         "inspection_points":
-
             [
                 "blank_photo_flag": false,
                 "language": "EN",
