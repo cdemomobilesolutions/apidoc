@@ -309,7 +309,7 @@ Chrome Consumer Info
 | Warranty            | Emissions Note                     | Emission component coverage - Varies by geographical region.                    |
 +---------------------+------------------------------------+---------------------------------------------------------------------------------+
 | Warranty            | Roadside Assistance Note           | Roadside Basic Care Assistance Program includes -  Toll Free Assistance #       |
-| Warranty            | Basic Years                        | 1-800-CHEV-USA Free Towing to nearest Chevy Dealer Reasonable cost Wrecker...   |
+|                     | Basic Years                        | 1-800-CHEV-USA Free Towing to nearest Chevy Dealer Reasonable cost Wrecker...   |
 +---------------------+------------------------------------+---------------------------------------------------------------------------------+
 
 
@@ -376,4 +376,18 @@ Client_confirmed, pkg_flag, installed-flag and standard_flag will always be true
 | REAR TIRES                    | P235/75R15 SBR BSW ALL-SEASON REAR TIRES       |                                     |
 +-------------------------------+------------------------------------------------+-------------------------------------+
 | SPARE TIRE                    | P235/75R15 SBR BSW ALL-SEASON SPARE TIRE       |                                     |
++-------------------------------+------------------------------------------------+-------------------------------------+
+| SEAT TYPE                     | FRONT BENCH SEAT                               |                                     |
++-------------------------------+------------------------------------------------+-------------------------------------+
+| SEAT TRIM                     | VINYL SEAT TRIM                                |                                     |
++-------------------------------+------------------------------------------------+-------------------------------------+
+| PAINT                         | SOLID PAINT                                    |                                     |
++-------------------------------+------------------------------------------------+-------------------------------------+
+| AIR CONDITIONING              | AIR CONDITIONING NOT DESIRED                   |                                     |
++-------------------------------+------------------------------------------------+-------------------------------------+
+| ADDITIONAL OPTIONS            | MULTIPLE ORDER ACKNOWLEDGEMENT                 |                                     |
++                               +------------------------------------------------+-------------------------------------+
+|                               | UNDER-RAIL BEDLINER                            |                                     |
++                               +------------------------------------------------+-------------------------------------+
+|                               | ENGINE HOUR METER                              |                                     |
 +-------------------------------+------------------------------------------------+-------------------------------------+
