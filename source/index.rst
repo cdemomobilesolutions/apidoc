@@ -13,6 +13,7 @@ Welcome to cDemo API Docs!
 
    record_api
    api_returns
+   complete_json
 
 .. Indices and tables
 .. ==================
