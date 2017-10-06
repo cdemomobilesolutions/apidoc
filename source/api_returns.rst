@@ -122,20 +122,18 @@ Chrome Equipment
     {
         "chrome_equipments":
 
-            [
-                "lang": "EN",
-                "header_name": "MECHANICAL",
-                "description": "4.3L (262) SFI V6 (Vortec) engine"
+        "lang": "EN",
+        "header_name": "MECHANICAL",
+        "description": "4.3L (262) SFI V6 (Vortec) engine"
 
-                "lang": "EN",
-                "header_name": "MECHANICAL",
-                "description": "5-speed manual transmission w/OD"
+        "lang": "EN",
+        "header_name": "MECHANICAL",
+        "description": "5-speed manual transmission w/OD"
 
-                "lang": "EN",
-                "header_name": "EXTERIOR",
-                "description": "Daytime running lamps"
-            ]
-    },
+        "lang": "EN",
+        "header_name": "EXTERIOR",
+        "description": "Daytime running lamps"
+    }
 
 +---------------------+-------------------------------------------------------+
 | **Header Name**     | **Description**                                       |
@@ -189,18 +187,16 @@ cDemo Record
     {
         "cdemo_record":
 
-            [
-                "lang": "EN",
-                "photo_count": 7,
-                "create_date": "Sep 29, 2017 6:19:44 PM",
-                "days_in_inventory": 0,
-                "last_mod_by": "",
-                "status_code": 1,
-                .
-                .
-                .
-            ]
-    },
+        "lang": "EN",
+        "photo_count": 7,
+        "create_date": "Sep 29, 2017 6:19:44 PM",
+        "days_in_inventory": 0,
+        "last_mod_by": "",
+        "status_code": 1,
+        .
+        .
+        .
+    }
 
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | **Key**                       | **Value**                                                                                                                       |
@@ -287,13 +283,11 @@ Chrome Consumer Info
     {
         "chrome_consumer_info":
 
-            [
-                "info_value": "3",
-                "lang": "EN",
-                "info_type": "Warranty",
-                "info_name": "Basic Years"
-            ]
-    },
+        "info_value": "3",
+        "lang": "EN",
+        "info_type": "Warranty",
+        "info_name": "Basic Years"
+    }
 
 
 +---------------------+------------------------------------+---------------------------------------------------------------------------------+
@@ -323,17 +317,15 @@ Client_confirmed, pkg_flag, installed-flag and standard_flag will always be true
     {
         "chrome_options":
 
-            [
-                "lang": "EN",
-                "client_confirmed": false,
-                "header_name": "BODY CODE",
-                "description": "FLEETSIDE BODY",
-                "pkg_includes": "",
-                "pkg_flag": false,
-                "installed_flag": false,
-                "standard_flag": true
-            ]
-    },
+        "lang": "EN",
+        "client_confirmed": false,
+        "header_name": "BODY CODE",
+        "description": "FLEETSIDE BODY",
+        "pkg_includes": "",
+        "pkg_flag": false,
+        "installed_flag": false,
+        "standard_flag": true
+    }
 
 +-------------------------------+------------------------------------------------+-------------------------------------+
 | **Header Name**               | **Description**                                | **Package Includes**                |
@@ -401,56 +393,54 @@ Inspection Points
 
     {
         "inspection_points":
-            [
-                "blank_photo_flag": false,
-                "language": "EN",
-                "question_text": "Do you want to use the default value for Listing Type?",
-                "last_mod_date": "Sep 29, 2017 6:22:05 PM",
-                "stage_text": "Listing Information",
-                "photo_point_flag": false,
-                "damage_flag": false,
-                "stage_order": 1,
-                "secondary_question_type_id": 0,
-                "option_flag": false,
-                "stock_photo_flag": false,
-                "answer_parent": "",
-                "photo_available_flag": false,
-                "question_order": 1,
-                "answer": "NO",
-                "video_point_flag": false,
-                "parent_question_id": 0,
-                "question_type_id": 2765,
-                "question_text_short": "Change Default Listing Type",
-                "question_id": 5802
-            ]
-            [
-                "original_photo_url": "http://static.cdemo.com/65325943/1506709202849.jpg",
-                "stage_text": "Vehicle Information",
-                "photo_point_flag": true,
-                "stage_order": 2,
-                "answer_parent": "",
-                "photo_available_flag": true,
-                "damage_flag": false,
-                "photo_processed": 1,
-                "question_type_id": 1,
-                "blank_photo_flag": false,
-                "seo_photo_name": "automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg",
-                "question_text": "PRIMARY PHOTO. Turn your Device horizontal to the left and take photo.",
-                "video_point_flag": false,
-                "question_order": 5,
-                "answer": "",
-                "secondary_question_type_id": 0,
-                "option_flag": false,
-                "stock_photo_flag": false,
-                "parent_question_id": 0,
-                "question_text_short": "Primary Listing Photo",
-                "photo_url": "http://static.cdemo.com/65325943/1024/automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg",
-                "last_mod_date": "Sep 29, 2017 6:23:12 PM",
-                "language": "EN",
-                "photo_uploaded": 1,
-                "question_id": 1
-            ]
-    },
+
+        "blank_photo_flag": false,
+        "language": "EN",
+        "question_text": "Do you want to use the default value for Listing Type?",
+        "last_mod_date": "Sep 29, 2017 6:22:05 PM",
+        "stage_text": "Listing Information",
+        "photo_point_flag": false,
+        "damage_flag": false,
+        "stage_order": 1,
+        "secondary_question_type_id": 0,
+        "option_flag": false,
+        "stock_photo_flag": false,
+        "answer_parent": "",
+        "photo_available_flag": false,
+        "question_order": 1,
+        "answer": "NO",
+        "video_point_flag": false,
+        "parent_question_id": 0,
+        "question_type_id": 2765,
+        "question_text_short": "Change Default Listing Type",
+        "question_id": 5802
+
+        "original_photo_url": "http://static.cdemo.com/65325943/1506709202849.jpg",
+        "stage_text": "Vehicle Information",
+        "photo_point_flag": true,
+        "stage_order": 2,
+        "answer_parent": "",
+        "photo_available_flag": true,
+        "damage_flag": false,
+        "photo_processed": 1,
+        "question_type_id": 1,
+        "blank_photo_flag": false,
+        "seo_photo_name": "automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg",
+        "question_text": "PRIMARY PHOTO. Turn your Device horizontal to the left and take photo.",
+        "video_point_flag": false,
+        "question_order": 5,
+        "answer": "",
+        "secondary_question_type_id": 0,
+        "option_flag": false,
+        "stock_photo_flag": false,
+        "parent_question_id": 0,
+        "question_text_short": "Primary Listing Photo",
+        "photo_url": "http://static.cdemo.com/65325943/1024/automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg",
+        "last_mod_date": "Sep 29, 2017 6:23:12 PM",
+        "language": "EN",
+        "photo_uploaded": 1,
+        "question_id": 1
+    }
 
 To Extract Photos
 ------------------
