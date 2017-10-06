@@ -21,14 +21,13 @@ Sample Return for querying inspection IDs:
 Sample Return for Record Details
 ==========================================
 
-Querrying the record details API will return a large json response. The response is mapped into 7 sections:
+Querrying the record details API will return a large json response. The response is mapped into 6 sections:
 
 - Record Attributes
 - Chrome Equipments
 - Chrome Options
 - Inspection Points
 - Chrome Consumer Info
-- Inspsection ID
 - cDemo Record
 
 Please use the navigator on the left to go to the section you are looking for.
@@ -224,6 +223,8 @@ cDemo Record
 | primary_photo_url             | http://static.cdemo.com/65325943/1024/automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg      |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | primary_photo_thumbnail       | http://static.cdemo.com/65325943/150/automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg       |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| urls_for_360_image            | http://static.cdemo.com/65325943/150/automobiles-used-1997-chevrolet-ck-1500-work-1364383-primary-listing-photo-Image.jpg       |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | youtube_watch_url             | http://www.youtube.com/v/None                                                                                                   |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------+

@@ -42,3 +42,43 @@ Grid table
 +---------------------+-------------------------------+-------------------------------+
 | Chrome Style        | record_attribute              | CHROME_STYLE                  |
 +---------------------+-------------------------------+-------------------------------+
+
+   {
+        "lang": "EN",
+        "header_name": "EXTERIOR",
+        "description": "Solid exterior paint"
+    },
+    {
+        "lang": "EN",
+        "header_name": "EXTERIOR",
+        "description": "Chrome front bumper"
+    },
+    {
+        "lang": "EN",
+        "header_name": "EXTERIOR",
+        "description": "Dark argent air dam"
+    },
+    {
+        "lang": "EN",
+        "header_name": "INTERIOR",
+        "description": "Black full-floor rubber mat"
+    },
+    {
+        "lang": "EN",
+        "header_name": "INTERIOR",
+        "description": "Simulated leather steering wheel"
+    },
+    {
+        "lang": "EN",
+        "header_name": "SAFETY FEATURES",
+        "description": "Manual lap/shoulder safety belts, outboard seat positions"
+    },
+    {
+        "lang": "EN",
+        "header_name": "SAFETY FEATURES",
+        "description": "Front outboard shoulder belt height adjusters"
+    },
+    {
+        "lang": "EN",
+        "header_name": "SAFETY FEATURES",
+        "description": "Manual lap safety belts, center seat position"
