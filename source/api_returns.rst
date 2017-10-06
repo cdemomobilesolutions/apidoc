@@ -35,6 +35,8 @@ Please use the navigator on the left to go to the section you are looking for.
 Record Attributes
 ==================
 
+``[NOTE] Sample Snipit of of the JSON return``
+
 .. code-block:: json
 
     {
