@@ -112,7 +112,7 @@ Query for inspection_ids:
 
 
 Retrieve Record Details
------------------------
+========================
 
 All queries sent to backend:
 
