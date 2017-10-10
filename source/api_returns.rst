@@ -5,6 +5,9 @@ API Returns (JSON)
 Sample Returns
 ===============
 
+Sample Return for Retrieve Unique Record ID's (Inspection ID's)
+==================================================================
+
 Sample Return for querying inspection IDs:
 
 .. code-block:: json
