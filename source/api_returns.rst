@@ -1,9 +1,6 @@
 ===================
-API Returns (JSON)
+API Sample Returns (JSON)
 ===================
-
-Sample Returns
-===============
 
 Sample Return for Retrieve Unique Record ID's (Inspection ID's)
 ==================================================================
