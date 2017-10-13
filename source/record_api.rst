@@ -78,6 +78,12 @@ vin_decode_status
     - IV: Indicates non-Valid VIN and VIN-Decoding not used. This will occur if VIN is incorrect or if it is a pre-1981 VIN
     - SC: Is normal status indicating valid-VIN and good Decode
 
+cat_id
+    Status and Explanation:
+
+    - 2: New Auto
+    - 3: Used Auto
+
 
 **Sample Usage**
 
