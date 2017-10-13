@@ -60,7 +60,7 @@ Retrieve Unique Record ID's (Inspection ID's)
 |                       |               | in millisecond, between the current   |
 |                       |               | time and midnight, January 1,1970 UTC)|
 +-----------------------+---------------+---------------------------------------+
-| cat_id                | No            | code: 2 - New Auto, 3 - Used Auto     |
+| cat_id                | No            | Code: 2 - New Auto, 3 - Used Auto     |
 +-----------------------+---------------+---------------------------------------+
 | type_id               | No            | cDemo record type ID                  |
 +-----------------------+---------------+---------------------------------------+
