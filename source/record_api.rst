@@ -60,7 +60,7 @@ Retrieve Unique Record ID's (Inspection ID's)
 |                       |               | in millisecond, between the current   |
 |                       |               | time and midnight, January 1,1970 UTC)|
 +-----------------------+---------------+---------------------------------------+
-| cat_id                | No            | cDemo category ID                     |
+| cat_id                | No            | code: 2 - New Auto, 3 - Used Auto     |
 +-----------------------+---------------+---------------------------------------+
 | type_id               | No            | cDemo record type ID                  |
 +-----------------------+---------------+---------------------------------------+
@@ -77,12 +77,6 @@ vin_decode_status
     - ER: VIN was probably valid, but decoding failed for other reason (usually bad data return / unable to decode from Chrome)
     - IV: Indicates non-Valid VIN and VIN-Decoding not used. This will occur if VIN is incorrect or if it is a pre-1981 VIN
     - SC: Is normal status indicating valid-VIN and good Decode
-
-cat_id
-    Status and Explanation:
-
-    - 2: New Auto
-    - 3: Used Auto
 
 
 **Sample Usage**
