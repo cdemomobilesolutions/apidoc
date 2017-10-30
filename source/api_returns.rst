@@ -465,3 +465,48 @@ To Extract Vehicle Info
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | answer                        | Miles                                                                                                                           |
 +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+
+Sample Return for Records.
+==========================================
+
+Querying the paginated records API will return a large json response.
+
+.. code-block:: json
+
+  {
+    "status": 200,
+    "timestamp": "2017-10-27T12:10:26.524",
+    "message": "Successful",
+      "content": [
+        {
+          "links": {
+            "next": "https://uat.cdemo.com/api/api/latest/inventories?access_token=xxxxxx&page=2",
+            "prev": null,
+            "total_results": 1343
+          },
+          "paginated_results": [
+              {
+                  "inspection_id": "20150902cwtuvoeq",
+                  "cdemo_record": {},
+                  "record_attributes": [],
+                  "inspection_points": [],
+                  "chrome_options": [],
+                  "chrome_equipments": [],
+                  "chrome_consumer_infos": []
+              },
+              ...
+          ]
+        }
+    ]
+  }
+
+
+These objects return the same formats response as Record Details API.
+
+  - Record Attributes
+  - Chrome Equipments
+  - Chrome Options
+  - Inspection Points
+  - Chrome Consumer Info
+  - cDemo Record
