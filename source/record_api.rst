@@ -191,7 +191,7 @@ The interface of BackEnd works with the principe RESTfull
 | lang          | lang=EN,FR                    |
 +---------------+-------------------------------+
 
-Retrieve Records.
+Retrieve Records (Single Call)
 ==============================================
 
 :Method:
