@@ -7,12 +7,11 @@ Welcome to cDemo API Docs!
 =========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :glob:
 
 
    record_api
-   api_returns
 
 
 .. Indices and tables

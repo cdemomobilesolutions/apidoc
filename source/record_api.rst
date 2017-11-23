@@ -1,307 +1,504 @@
-===========
-Record API
-===========
-
-Setup API Account
 =================
-- Please contact cDemo support
+API Reference
+=================
 
 API End Points
 =================
 +------------+-----------------------------------+
-| Production | http://api.cdemo.com/api/latest/  |
+| Production | https://api.cdemo.com/v3/         |
 +------------+-----------------------------------+
 
-API Methods
+Export Records API
 =================
 
+.. sourcecode:: http
 
-Retrieve Unique Record ID's (Inspection ID's)
-==============================================
+  GET /records-export HTTP/1.1
 
-:Method:
-    records **(HTTP METHOD: GET)**
-:Type of query:
-    inspection_ids
-:Return Type:
-    JSON string of matched inspection IDs
-:Example:
-    https://test.cdemo.com/api/latest/records/inspection-ids?access_token=xxxxx&status=1
-
+Request
+~~~~~~~
 
 +-----------------------+---------------+---------------------------------------+
 | Parameters            | Is Mandatory  | Notes                                 |
 +=======================+===============+=======================================+
-| Token                 | Yes           | a access token is required            |
-|                       |               | for all of the API's                  |
-|                       |               | request                               |
+| access_token          | Yes           | if you do not have one,               |
+|                       |               | please contact cDemo support.         |
 +-----------------------+---------------+---------------------------------------+
 | user_id               | No            | cDemo username                        |
 +-----------------------+---------------+---------------------------------------+
 | party_id              | No            | cDemo party_id                        |
 +-----------------------+---------------+---------------------------------------+
-| date_from             | No            | start date of record created in       |
-|                       |               | milliseconds (the difference, measured|
-|                       |               | in millisecond, between the current   |
-|                       |               | time and midnight, January 1,1970 UTC)|
+| date_from             | No            | format like 2017-11-16                |
 +-----------------------+---------------+---------------------------------------+
-| date_to               | No            | start date of record created in       |
-|                       |               | milliseconds (the difference, measured|
-|                       |               | in millisecond, between the current   |
-|                       |               | time and midnight, January 1,1970 UTC)|
+| date_to               | No            | format like 2017-11-16                |
 +-----------------------+---------------+---------------------------------------+
-| update_date_from      | No            | start date of record UPDATED date in  |
-|                       |               | milliseconds (the difference, measured|
-|                       |               | in millisecond, between the current   |
-|                       |               | time and midnight, January 1,1970 UTC)|
+| price_from            | No            | listing_price range from, like 100.00 |
 +-----------------------+---------------+---------------------------------------+
-| update_date_to        | No            | start date of record UPDATED date in  |
-|                       |               | milliseconds (the difference, measured|
-|                       |               | in millisecond, between the current   |
-|                       |               | time and midnight, January 1,1970 UTC)|
+| price_to              | No            | listing_price range to, like 100.00   |
 +-----------------------+---------------+---------------------------------------+
-| cat_id                | No            | See Below                             |
+| has_comment           | No            | whether or not have comment,          |
+|                       |               | value 'YES' or 'NO'                   |
 +-----------------------+---------------+---------------------------------------+
-| status                | No            | status code: 0 - In-Progress, 1 -     |
-|                       |               | Available and 2 - Archived            |
+| has_video             | No            | whether or not have video,            |
+|                       |               | value 'YES' or 'NO'                   |
 +-----------------------+---------------+---------------------------------------+
-| vin_decode_status     | No            |  See Below                            |
+| has_price             | No            | whether or not have listing price,    |
+|                       |               | value 'YES' or 'NO'                   |
 +-----------------------+---------------+---------------------------------------+
-| make                  | No            | make of automobile record.            |
+| has_sale_price        | No            | whether or not have sale price,       |
+|                       |               | value 'YES' or 'NO'                   |
 +-----------------------+---------------+---------------------------------------+
-| model                 | No            | model of automobile record.           |
+| real_photo_count      | No            | whether or not have photos,           |
+|                       |               | value 'YES' or 'NO'                   |
 +-----------------------+---------------+---------------------------------------+
-| year                  | No            | manufactured year of automobile record|
+| is_certified          | No            | whether or not is certified,          |
+|                       |               | value 'YES' or 'NO'                   |
 +-----------------------+---------------+---------------------------------------+
-
-vin_decode_status
-    Status and Explanation:
-
-    - I: Indicates VIN Decoding is in progress.
-    - ER: VIN was probably valid, but decoding failed for other reason (usually bad data return / unable to decode from Chrome)
-    - IV: Indicates non-Valid VIN and VIN-Decoding not used. This will occur if VIN is incorrect or if it is a pre-1981 VIN
-    - SC: Is normal status indicating valid-VIN and good Decode
-
-cat_id
-    Status and Explanation:
-
-    - 2: New Automobile
-    - 3: Used Automobile
-    - 1009: Motorcycle
-    - 1060: ATVs & UTVs
-    - 1061: Campers
-    - 1062: RVs
-    - 1063: Trailers
-    - 1064: Snowmobiles
-
-
-**Sample Usage**
-
-+------------------+-------------------------------+
-| Token            | token=xxxxxx                  |
-+------------------+-------------------------------+
-| user_id          | user_id=cdemotest             |
-+------------------+-------------------------------+
-| party_id         | party_id=10                   |
-+------------------+-------------------------------+
-| date_from        | date_from=1372060916          |
-+------------------+-------------------------------+
-| date_to          | date_to=1372061234            |
-+------------------+-------------------------------+
-| update_date_from | update_date_from=1372060916   |
-+------------------+-------------------------------+
-| update_date_to   | update_date_to=1372061234     |
-+------------------+-------------------------------+
-| cat_id           | cat_id=2                      |
-+------------------+-------------------------------+
-| type_id          | type_id=3                     |
-+------------------+-------------------------------+
-| status           | status=1,2                    |
-+------------------+-------------------------------+
-| vin_decode_status| vin_decode_status=SC          |
-+------------------+-------------------------------+
-| make             | make=Mitsubishi               |
-+------------------+-------------------------------+
-| model            | model=Outlander               |
-+------------------+-------------------------------+
-| year             | year=2016                     |
-+------------------+-------------------------------+
-
-Query for inspection_ids:
-    If  inspection_id parameter is missing from the request, Records APIs will try to query inspections IDs as defined by other query parameters.
-        You can pass one or more of these query parameters to cDemo system. The default filter is the party_id associated with the access token. Currently cDemo system has limited the returned inspection_ids to 1,000 for each query (latest records first).  To use this query API efficiently, please supply as much parameters as you can.
-
-
-
-Retrieve Record Details
-========================
-
-All queries sent to backend:
-
-:Method:
-    records **(HTTP METHOD: GET)**
-:Type of query:
-    Record Data
-:Return Type:
-    JSON string of matched records.
-:Example:
-    https://test.cdemo.com/api/latest/records?access_token=xxxx&inspection_id=xxxx,xxxx&lang=EN,FR
-
-The interface of BackEnd works with the principe RESTfull
-
-+-----------------------+---------------+----------------------------+
-| Parameters            | Is Mandatory  | Notes                      |
-+=======================+===============+============================+
-| Token                 | Yes           | a access token is required |
-|                       |               | for all of the API's       |
-|                       |               | request                    |
-+-----------------------+---------------+----------------------------+
-| inspection_id         | No            | inspection_id of record.   |
-|                       |               | To pull multiple records   |
-|                       |               | on a single API call,      |
-|                       |               | concatenate inspection ID's|
-|                       |               | with comma such as         |
-|                       |               | inspection_id1,            |
-|                       |               | inspection_id2             |
-+-----------------------+---------------+----------------------------+
-| vin_code              | No            | vin code of vehicle. To    |
-|                       |               | pull multiple records on   |
-|                       |               | a single API call,         |
-|                       |               | concatenate vin codes with |
-|                       |               | comma(,) such as vin_code_1|
-|                       |               | ,vin_code_2                |
-+-----------------------+---------------+----------------------------+
-| lang                  | No            | language flag such as      |
-|                       |               | lang=EN or lang=EN,FR      |
-+-----------------------+---------------+----------------------------+
-
-
-**Sample Usage**
-
-+---------------+-------------------------------+
-| Token         | token=xxxxxx                  |
-+---------------+-------------------------------+
-| inspection_id | inspection_id=inspection_id=  |
-|               | 20140120cfwejboi,             |
-|               | 20140120bwtmncis              |
-+---------------+-------------------------------+
-| vin_code      | vin_code=3C6TRVAG4EE103634,   |
-|               | KM8JT3AB1DU752443             |
-+---------------+-------------------------------+
-| lang          | lang=EN,FR                    |
-+---------------+-------------------------------+
-
-Retrieve Records (Single Call)
-==============================================
-
-:Method:
-    records **(HTTP METHOD: GET)**
-:Type of query:
-    paginated records.
-:Return Type:
-    JSON string of matched records.
-:Example:
-    https://test.cdemo.com/api/latest/inventories?access_token=xxxxx
-
+| has_damage            | No            | whether or not is deficiency,         |
+|                       |               | value 'YES' or 'NO'                   |
 +-----------------------+---------------+---------------------------------------+
-| Parameters            | Is Mandatory  | Notes                                 |
-+=======================+===============+=======================================+
-| Token                 | Yes           | a access token is required            |
-|                       |               | for all of the API's                  |
-|                       |               | request                               |
+| is_staging            | No            | value 0 or 1                          |
 +-----------------------+---------------+---------------------------------------+
-| user_id               | No            | cDemo username                        |
-+-----------------------+---------------+---------------------------------------+
-| party_id              | No            | cDemo party_id                        |
-+-----------------------+---------------+---------------------------------------+
-| date_from             | No            | start date of record created in       |
-|                       |               | milliseconds (the difference, measured|
-|                       |               | in millisecond, between the current   |
-|                       |               | time and midnight, January 1,1970 UTC)|
-+-----------------------+---------------+---------------------------------------+
-| date_to               | No            | start date of record created in       |
-|                       |               | milliseconds (the difference, measured|
-|                       |               | in millisecond, between the current   |
-|                       |               | time and midnight, January 1,1970 UTC)|
-+-----------------------+---------------+---------------------------------------+
-| update_date_from      | No            | start date of record UPDATED date in  |
-|                       |               | milliseconds (the difference, measured|
-|                       |               | in millisecond, between the current   |
-|                       |               | time and midnight, January 1,1970 UTC)|
-+-----------------------+---------------+---------------------------------------+
-| update_date_to        | No            | start date of record UPDATED date in  |
-|                       |               | milliseconds (the difference, measured|
-|                       |               | in millisecond, between the current   |
-|                       |               | time and midnight, January 1,1970 UTC)|
-+-----------------------+---------------+---------------------------------------+
-| cat_id                | No            | See Below                             |
+| dms_status_id         | No            | dms_status_id                         |
 +-----------------------+---------------+---------------------------------------+
 | status                | No            | status code: 0 - In-Progress, 1 -     |
 |                       |               | Available and 2 - Archived            |
 +-----------------------+---------------+---------------------------------------+
-| vin_decode_status     | No            |  See Below                            |
+| stocknumber           | No            | stock number of record.               |
 +-----------------------+---------------+---------------------------------------+
-| make                  | No            | make of automobile record.            |
+| condition_id          | No            | item condition id.                    |
 +-----------------------+---------------+---------------------------------------+
-| model                 | No            | model of automobile record.           |
+| page                  | No            | default is 1                          |
 +-----------------------+---------------+---------------------------------------+
-| year                  | No            | manufactured year of automobile record|
+| page_size             | No            | default is 10                         |
 +-----------------------+---------------+---------------------------------------+
-| page                  | No            | the page of paginated records. default|
-|                       |               | is 1. pagesize is 10.                                 |
+| exclude_fields        | No            | fields do not want to return.         |
+|                       |               | separate by ','.                      |
+|                       |               | like chrome_equipments,chrome_packages|
 +-----------------------+---------------+---------------------------------------+
 
-vin_decode_status
-    Status and Explanation:
+Response
+~~~~~~~~
 
-    - I: Indicates VIN Decoding is in progress.
-    - ER: VIN was probably valid, but decoding failed for other reason (usually bad data return / unable to decode from Chrome)
-    - IV: Indicates non-Valid VIN and VIN-Decoding not used. This will occur if VIN is incorrect or if it is a pre-1981 VIN
-    - SC: Is normal status indicating valid-VIN and good Decode
++-----------------------+-------------------------------------------------------+
+| Field Name            | Notes                                                 |
++=======================+=======================================================+
+| inspection_id         | inspection_id                                         |
++-----------------------+-------------------------------------------------------+
+| title                 | inspection_id                                         |
++-----------------------+-------------------------------------------------------+
+| status                | inspection_id                                         |
++-----------------------+-------------------------------------------------------+
+| ...                   | ...                                                   |
++-----------------------+-------------------------------------------------------+
+| detail                | detail                                                |
++-----------------------+-------------------------------------------------------+
+| inspection_points     | inspection_points                                     |
++-----------------------+-------------------------------------------------------+
+| chrome_equipments     | chrome_equipments                                     |
++-----------------------+-------------------------------------------------------+
+| chrome_packages       | chrome_packages                                       |
++-----------------------+-------------------------------------------------------+
+| chrome_consumer_info  | chrome_consumer_info                                  |
++-----------------------+-------------------------------------------------------+
 
-cat_id
-    Status and Explanation:
 
-    - 2: New Automobile
-    - 3: Used Automobile
-    - 1009: Motorcycle
-    - 1060: ATVs & UTVs
-    - 1061: Campers
-    - 1062: RVs
-    - 1063: Trailers
-    - 1064: Snowmobiles
+Example:
 
+.. code-block:: python
 
-**Sample Usage**
-
-+------------------+-------------------------------+
-| Token            | token=xxxxxx                  |
-+------------------+-------------------------------+
-| user_id          | user_id=cdemotest             |
-+------------------+-------------------------------+
-| party_id         | party_id=10                   |
-+------------------+-------------------------------+
-| date_from        | date_from=1372060916          |
-+------------------+-------------------------------+
-| date_to          | date_to=1372061234            |
-+------------------+-------------------------------+
-| update_date_from | update_date_from=1372060916   |
-+------------------+-------------------------------+
-| update_date_to   | update_date_to=1372061234     |
-+------------------+-------------------------------+
-| cat_id           | cat_id=2                      |
-+------------------+-------------------------------+
-| type_id          | type_id=3                     |
-+------------------+-------------------------------+
-| status           | status=1,2                    |
-+------------------+-------------------------------+
-| vin_decode_status| vin_decode_status=SC          |
-+------------------+-------------------------------+
-| make             | make=Mitsubishi               |
-+------------------+-------------------------------+
-| model            | model=Outlander               |
-+------------------+-------------------------------+
-| year             | year=2016                     |
-+------------------+-------------------------------+
-| page             | page=1                        |
-+------------------+-------------------------------+
+  {
+      "links": {
+          "next": "https://api.cdemo.com/v3/records-export?access_token=xxx&page=2&page_size=2",
+          "prev": null,
+          "total_results": 506
+      },
+      "paginated_results": [
+          {
+              "inspection_id": "20171122ngbwkmep",
+              "title": "2018 Jeep Cherokee",
+              "status": 1,
+              "staging_flag": 0,
+              "store": {
+                  "id": 1031366,
+                  "name": "Great West Chrysler"
+              },
+              "product": {
+                  "id": 1001,
+                  "description": "Automobiles"
+              },
+              "category": {
+                  "id": 2,
+                  "description": "New Auto"
+              },
+              "item_condition": {
+                  "id": 1,
+                  "description": "New"
+              },
+              "style": {
+                  "id": 6,
+                  "description": "4 Door Sport Utility"
+              },
+              "dms_status": {
+                  "status": "Available",
+                  "description": "Available"
+              },
+              "record_type": {
+                  "id": 20,
+                  "description": "Auto-Generated"
+              },
+              "city": "Edmonton",
+              "region": "AB",
+              "country_code": "CA",
+              "photo_count": 0,
+              "days_in_stock": 1,
+              "detail_page_url": "http://live.cdemo.com/view-details/automobiles/new/2018-jeep-cherokee/1eGjnaVD",
+              "inventory_date": "2017-11-22T12:53:49Z",
+              "deficiency_flag": null,
+              "repair_info_flag": null,
+              "whole_sale_price": null,
+              "invoice_price": null,
+              "listing_currency": "CAD",
+              "sale_price": null,
+              "listing_price": "48260.00",
+              "listing_comment": "",
+              "wholesale_comment": null,
+              "msrp": null,
+              "financing_comment": null,
+              "bi_weekly_finance_price": null,
+              "monthly_finance_price": null,
+              "weekly_finance_price": null,
+              "down_payment": null,
+              "monthly_period": null,
+              "percent_apr": null,
+              "sale_price_start_dt": null,
+              "sale_price_end_dt": null,
+              "youtube_video_id": null,
+              "youtube_embed_url": "",
+              "urls_for_360_image": null,
+              "primary_photo_url": "http://static.cdemo.com/65339522/1024/automobiles-new-2018-jeep-cherokee-1417868-primary-listing-photo-Image.jpg",
+              "primary_photo_thumbnail": "http://static.cdemo.com/65339522/150/automobiles-new-2018-jeep-cherokee-1417868-primary-listing-photo-Image.jpg",
+              "youtube_watch_url": "",
+              "created_by": "system",
+              "created_date": "2017-11-22T12:53:48Z",
+              "last_mod_date": "2017-11-22T12:55:01Z",
+              "last_mod_by": "System",
+              "detail": {
+                  "trim_level": null,
+                  "year_manufactured": "2018",
+                  "certified_program": null,
+                  "vin": "1C4PJMBX1JD558463",
+                  "engine_disp": "3.2",
+                  "package_codes": null,
+                  "additional_certified_program": null,
+                  "odometer_reading": 10,
+                  "fuel_economy_hwy": "9.4 - 9.9",
+                  "drivetrain": "4WD",
+                  "make": "Jeep",
+                  "certified_program_flag": null,
+                  "chrome_style_name": "Trailhawk Leather Plus 4x4",
+                  "engine": "V6 Cylinder Engine",
+                  "model_codes": null,
+                  "color_code": null,
+                  "interior_colour": "NAPPA LTHR",
+                  "seating_capacity": null,
+                  "fuel_economy_unit": "L/100 km",
+                  "option_codes": null,
+                  "number_passenger_doors": 4,
+                  "fuel_economy_city": "12.1 - 12.9",
+                  "exterior_colour": "PWY/BRIGHT WHT",
+                  "horse_power": "271.0",
+                  "cylinders": "6",
+                  "odometer_type": "Kilometers",
+                  "transmission": "9-Speed A/T",
+                  "horse_power_rpm": "6500",
+                  "model": "Cherokee",
+                  "fuel_type": "Gasoline Fuel"
+              },
+              "inspection_points": [
+                  {
+                      "stage_text": "Vehicle Info",
+                      "question_text": "Select if ODOMETER READING is in MILES or KILOMETERS",
+                      "question_text_short": "Odometer Type",
+                      "answer": "Kilometers",
+                      "answer_parent": null,
+                      "photo_url": null,
+                      "photo_point_flag": 0,
+                      "damage_flag": false,
+                      "option_flag": false,
+                      "stock_photo_flag": 0,
+                      "severity_descriptor": null,
+                      "wear_tear_flag": 0,
+                      "chargeable_flag": 0,
+                      "photo_available_flag": false,
+                      "last_mod_date": "2017-11-22T12:53:48Z"
+                  },
+                  {
+                      "stage_text": "Vehicle Info",
+                      "question_text": "Select the fuel type for this vehicle.\r\n(Single Choice Answer)",
+                      "question_text_short": "Vehicle Fuel Type",
+                      "answer": "Gasoline",
+                      "answer_parent": null,
+                      "photo_url": null,
+                      "photo_point_flag": 0,
+                      "damage_flag": false,
+                      "option_flag": true,
+                      "stock_photo_flag": 0,
+                      "severity_descriptor": null,
+                      "wear_tear_flag": 0,
+                      "chargeable_flag": 0,
+                      "photo_available_flag": false,
+                      "last_mod_date": "2017-11-22T12:54:12Z"
+                  }
+              ],
+              "chrome_equipments": {
+                  "SAFETY": [
+                      "Electronic Stability Control (ESC) And Roll Stability Control (RSC)",
+                      "Selec-Terrain ABS And Driveline Traction Control",
+                      "Side Impact Beams",
+                      "Dual Stage Driver And Passenger Seat-Mounted Side Airbags",
+                      "Tire Specific Low Tire Pressure Warning",
+                      "Dual Stage Driver And Passenger Front Airbags",
+                      "Curtain 1st And 2nd Row Airbags",
+                      "Airbag Occupancy Sensor",
+                      "Driver And Passenger Knee Airbag and Rear Side-Impact Airbag",
+                      "Rear Child Safety Locks",
+                      "Outboard Front Lap And Shoulder Safety Belts -inc: Rear Centre 3 Point, Height Adjusters and Pretensioners",
+                      "ParkView Back-Up Camera"
+                  ],
+                  "EXTERIOR": [
+                      "Wheels: 17\" x 7.5\" Off-Road Aluminum",
+                      "Tires: P245/65R17 OWL AT",
+                      "Steel Spare Wheel",
+                      "Full-Size Spare Tire Mounted Inside Under Cargo",
+                      "Paint w/Badging",
+                      "Black Front Bumper w/Coloured Bumper Insert and 2 Tow Hooks",
+                      "Black Rear Bumper w/Metal-Look Rub Strip/Fascia Accent and 1 Tow Hook",
+                      "Black Bodyside Cladding and Black Fender Flares",
+                      "Body-Coloured Door Handles",
+                      "Black Side Windows Trim",
+                      "Fixed Rear Window w/Fixed Interval Wiper and Defroster",
+                      "Deep Tinted Glass",
+                      "Variable Intermittent Wipers",
+                      "Composite/Galvanized Steel Panels",
+                      "Lip Spoiler",
+                      "Front License Plate Bracket",
+                      "Black Grille w/Metal-Look Surround",
+                      "Tailgate/Rear Door Lock Included w/Power Door Locks",
+                      "Roof Rack Rails Only",
+                      "Fully Automatic Projector Beam High Intensity Low/High Beam Daytime Running Headlamps w/Delay-Off",
+                      "Front Fog Lamps",
+                      "LED Brakelights"
+                  ]
+              },
+              "chrome_packages": [],
+              "chrome_consumer_info": [
+                  {
+                      "info_name": "Basic Years",
+                      "info_value": "3",
+                      "info_type": "Warranty"
+                  },
+                  {
+                      "info_name": "Basic Miles/km",
+                      "info_value": "60,000",
+                      "info_type": "Warranty"
+                  }
+              ]
+          },
+          {
+              "inspection_id": "20171122lbdmdyry",
+              "title": "2018 Ram 1500",
+              "status": 1,
+              "staging_flag": 0,
+              "store": {
+                  "id": 1031366,
+                  "name": "Great West Chrysler"
+              },
+              "product": {
+                  "id": 1001,
+                  "description": "Automobiles"
+              },
+              "category": {
+                  "id": 2,
+                  "description": "New Auto"
+              },
+              "item_condition": {
+                  "id": 1,
+                  "description": "New"
+              },
+              "style": {
+                  "id": 9,
+                  "description": "4 Door Pickup"
+              },
+              "dms_status": {
+                  "status": "Available",
+                  "description": "Available"
+              },
+              "record_type": {
+                  "id": 20,
+                  "description": "Auto-Generated"
+              },
+              "city": "Edmonton",
+              "region": "AB",
+              "country_code": "CA",
+              "photo_count": 0,
+              "days_in_stock": 1,
+              "detail_page_url": "http://live.cdemo.com/view-details/automobiles/new/2018-ram-1500/DlxwdakD",
+              "inventory_date": "2017-11-22T12:53:47Z",
+              "deficiency_flag": null,
+              "repair_info_flag": null,
+              "whole_sale_price": null,
+              "invoice_price": null,
+              "listing_currency": "CAD",
+              "sale_price": null,
+              "listing_price": "66675.00",
+              "listing_comment": "",
+              "wholesale_comment": null,
+              "msrp": null,
+              "financing_comment": null,
+              "bi_weekly_finance_price": null,
+              "monthly_finance_price": null,
+              "weekly_finance_price": null,
+              "down_payment": null,
+              "monthly_period": null,
+              "percent_apr": null,
+              "sale_price_start_dt": null,
+              "sale_price_end_dt": null,
+              "youtube_video_id": null,
+              "youtube_embed_url": "",
+              "urls_for_360_image": null,
+              "primary_photo_url": "http://static.cdemo.com/65339521/1024/automobiles-new-2018-ram-1500-1492797-primary-listing-photo-Image.jpg",
+              "primary_photo_thumbnail": "http://static.cdemo.com/65339521/150/automobiles-new-2018-ram-1500-1492797-primary-listing-photo-Image.jpg",
+              "youtube_watch_url": "",
+              "created_by": "system",
+              "created_date": "2017-11-22T12:53:46Z",
+              "last_mod_date": "2017-11-22T12:55:05Z",
+              "last_mod_by": "System",
+              "detail": {
+                  "trim_level": null,
+                  "year_manufactured": "2018",
+                  "certified_program": null,
+                  "vin": "1C6RR7NT2JS187635",
+                  "engine_disp": "5.7",
+                  "package_codes": null,
+                  "additional_certified_program": null,
+                  "odometer_reading": 10,
+                  "fuel_economy_hwy": "11.5 - 11.5",
+                  "drivetrain": "4WD",
+                  "make": "Ram",
+                  "certified_program_flag": null,
+                  "chrome_style_name": "Laramie 4x4 Crew Cab 5'7\" Box",
+                  "engine": "8 Cylinder Engine",
+                  "model_codes": null,
+                  "color_code": "PW7",
+                  "interior_colour": "Leather",
+                  "seating_capacity": null,
+                  "fuel_economy_unit": "L/100 km",
+                  "option_codes": null,
+                  "number_passenger_doors": 4,
+                  "fuel_economy_city": "16.1 - 16.1",
+                  "exterior_colour": "White[Bright White]",
+                  "horse_power": "395.0",
+                  "cylinders": "8",
+                  "odometer_type": "Kilometers",
+                  "transmission": "8-Speed A/T",
+                  "horse_power_rpm": "5600",
+                  "model": "1500",
+                  "fuel_type": "Gasoline Fuel"
+              },
+              "inspection_points": [
+                  {
+                      "stage_text": "Vehicle Info",
+                      "question_text": "Select if ODOMETER READING is in MILES or KILOMETERS",
+                      "question_text_short": "Odometer Type",
+                      "answer": "Kilometers",
+                      "answer_parent": null,
+                      "photo_url": null,
+                      "photo_point_flag": 0,
+                      "damage_flag": false,
+                      "option_flag": false,
+                      "stock_photo_flag": 0,
+                      "severity_descriptor": null,
+                      "wear_tear_flag": 0,
+                      "chargeable_flag": 0,
+                      "photo_available_flag": false,
+                      "last_mod_date": "2017-11-22T12:53:46Z"
+                  },
+                  {
+                      "stage_text": "Vehicle Info",
+                      "question_text": "Select the fuel type for this vehicle.\r\n(Single Choice Answer)",
+                      "question_text_short": "Vehicle Fuel Type",
+                      "answer": "Gasoline",
+                      "answer_parent": null,
+                      "photo_url": null,
+                      "photo_point_flag": 0,
+                      "damage_flag": false,
+                      "option_flag": true,
+                      "stock_photo_flag": 0,
+                      "severity_descriptor": null,
+                      "wear_tear_flag": 0,
+                      "chargeable_flag": 0,
+                      "photo_available_flag": false,
+                      "last_mod_date": "2017-11-22T12:54:14Z"
+                  }
+              ],
+              "chrome_equipments": {
+                  "SAFETY": [
+                      "Electronic Stability Control (ESC)",
+                      "ABS And Driveline Traction Control",
+                      "Side Impact Beams",
+                      "Dual Stage Driver And Passenger Seat-Mounted Side Airbags",
+                      "ParkSense Rear Parking Sensors",
+                      "Tire Specific Low Tire Pressure Warning",
+                      "Dual Stage Driver And Passenger Front Airbags",
+                      "Airbag Occupancy Sensor",
+                      "Curtain 1st And 2nd Row Airbags",
+                      "Rear Child Safety Locks",
+                      "Outboard Front Lap And Shoulder Safety Belts -inc: Rear Centre 3 Point, Height Adjusters and Pretensioners",
+                      "ParkView Back-Up Camera"
+                  ],
+                  "EXTERIOR": [
+                      "Wheels: 20\" x 9\" Chrome-Clad Aluminum",
+                      "Tires: P275/60R20 BSW All-Season",
+                      "Regular Box Style",
+                      "Goodyear Brand Tires",
+                      "Steel Spare Wheel",
+                      "Full-Size Spare Tire Stored Underbody w/Crankdown",
+                      "Clearcoat Paint",
+                      "Chrome Front Bumper w/Body-Coloured Rub Strip/Fascia Accent",
+                      "Chrome Rear Step Bumper",
+                      "Black Side Windows Trim and Black Front Windshield Trim",
+                      "Chrome Door Handles",
+                      "Body-Coloured Fender Flares",
+                      "Chrome Power w/Tilt Down Heated Auto Dimming Side Mirrors w/Power Folding and Turn Signal Indicator",
+                      "Power Rear Window",
+                      "Variable Intermittent Wipers",
+                      "Deep Tinted Glass",
+                      "Galvanized Steel/Aluminum Panels",
+                      "Chrome Grille",
+                      "Front License Plate Bracket",
+                      "Tailgate Rear Cargo Access",
+                      "Tailgate/Rear Door Lock Included w/Power Door Locks",
+                      "Cargo Lamp w/High Mount Stop Light",
+                      "Fully Automatic Projector Beam Halogen Daytime Running Headlamps w/Delay-Off",
+                      "Front Fog Lamps",
+                      "Perimeter/Approach Lights",
+                      "LED Brakelights"
+                  ]
+              },
+              "chrome_packages": [],
+              "chrome_consumer_info": [
+                  {
+                      "info_name": "Basic Years",
+                      "info_value": "3",
+                      "info_type": "Warranty"
+                  },
+                  {
+                      "info_name": "Basic Miles/km",
+                      "info_value": "60,000",
+                      "info_type": "Warranty"
+                  }
+              ]
+          }
+      ]
+  }
