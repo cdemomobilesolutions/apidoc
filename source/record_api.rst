@@ -87,9 +87,9 @@ Response
 +=======================+=======================================================+
 | inspection_id         | inspection_id                                         |
 +-----------------------+-------------------------------------------------------+
-| title                 | inspection_id                                         |
+| title                 | Vehicle Title                                         |
 +-----------------------+-------------------------------------------------------+
-| status                | inspection_id                                         |
+| status                | Vehicle Status                                        |
 +-----------------------+-------------------------------------------------------+
 | ...                   | ...                                                   |
 +-----------------------+-------------------------------------------------------+
@@ -104,8 +104,31 @@ Response
 | chrome_consumer_info  | chrome_consumer_info                                  |
 +-----------------------+-------------------------------------------------------+
 
+Filter Querry Results
+~~~~~~~~~~~~~~~~~~~~~~
 
-Example:
+To Filter querry results, use fields=<filter parameter> after the API token. Example:
+
+- access_token<xxx>fields=chrome_equipments&status=1
+
+This filter will only return the chrome equipments section and vehicles with status=1
+
+
+Exclude Sections of JSON return
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Our API returns many data points, like inspection_points, chrome_equipments and so on. If you do not require a specific data point, you have the ability to exclude it from being sent.
+Here is an example on how to use it:
+
+After the API Token, use exclude_fields=<field name>
+-exclude_fields=chrome_equipments,chrome_packages,chrome_consumer_info
+
+This will prevent chrome_equipments, chrome_packages, and chrome_consumer_info sections from being sent.
+
+
+
+JSON Return Example:
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
