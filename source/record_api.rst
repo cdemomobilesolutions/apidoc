@@ -104,10 +104,10 @@ Response
 | chrome_consumer_info  | chrome_consumer_info                                  |
 +-----------------------+-------------------------------------------------------+
 
-Filter Querry Results
-~~~~~~~~~~~~~~~~~~~~~~
+Return Specific Fields
+~~~~~~~~~~~~~~~~~~~~~~~
 
-To Filter querry results, use fields=<filter parameter> after the API token. Example:
+To querry specific fields, use fields=<field name> after the API token. Example:
 
 - access_token<xxx>fields=chrome_equipments&status=1
 
