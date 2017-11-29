@@ -139,6 +139,7 @@ JSON Return Example:
 
 .. code-block:: python
 
+
   {
       "links": {
           "next": "https://api.cdemo.com/v3/records-export?access_token=xxx&page=2&page_size=2",
@@ -339,3 +340,103 @@ JSON Return Example:
           },
       ]
   }
+
+
+Snowmobile
+-----------
+
+.. code-block:: python
+
+{
+    "links": {
+        "next": "https://api.cdemo.com/v3/records?access_token=H2RbYJSOXcksNlx1qOLdOhkWOaqYAU&page=2&page_size=1",
+        "prev": null,
+        "total_results": 335
+    },
+    "paginated_results": [
+        {
+            "inspection_id": "20170930lsjswteu",
+            "title": "2018 Polaris 800 SKS 146 ",
+            "status": 1,
+            "staging_flag": 0,
+            "store": {
+                "id": 1066110,
+                "name": "Smart Cat"
+            },
+            "product": {
+                "id": 1064,
+                "description": "Snowmobiles"
+            },
+            "category": {
+                "id": 1114,
+                "description": "Touring Snowmobile"
+            },
+            "item_condition": {
+                "id": 1,
+                "description": "New"
+            },
+            "style": {
+                "id": 21,
+                "description": "Generic"
+            },
+            "dms_status": {
+                "status": null,
+                "description": null
+            },
+            "record_type": {
+                "id": 74,
+                "description": "Generic"
+            },
+            "city": "Edmonton",
+            "region": "AB",
+            "country_code": "CA",
+            "photo_count": 0,
+            "days_in_stock": 61,
+            "detail_page_url": "http://live.cdemo.com/view-details/snowmobiles/new/2018-polaris-800-sks-146-/1Lzdxq3D",
+            "inventory_date": "2017-09-30T10:46:13Z",
+            "deficiency_flag": null,
+            "repair_info_flag": null,
+            "whole_sale_price": null,
+            "invoice_price": "13566.00",
+            "listing_currency": null,
+            "sale_price": null,
+            "listing_price": "0.00",
+            "listing_comment": null,
+            "wholesale_comment": null,
+            "msrp": "0.00",
+            "financing_comment": null,
+            "bi_weekly_finance_price": null,
+            "monthly_finance_price": null,
+            "weekly_finance_price": null,
+            "down_payment": null,
+            "monthly_period": null,
+            "percent_apr": null,
+            "sale_price_start_dt": null,
+            "sale_price_end_dt": null,
+            "youtube_video_id": null,
+            "youtube_embed_url": "",
+            "urls_for_360_image": null,
+            "primary_photo_url": null,
+            "primary_photo_thumbnail": null,
+            "youtube_watch_url": "",
+            "created_by": "system",
+            "created_date": "2017-09-30T10:46:13Z",
+            "last_mod_date": "2017-10-02T14:56:24Z",
+            "last_mod_by": "1062260cdemo",
+            "detail": {
+                "engine": null,
+                "hours": null,
+                "odometer_type": "Kilometers",
+                "make": "Polaris",
+                "primary_colour": "",
+                "track_length": null,
+                "suspension_type": null,
+                "year": "2018",
+                "serial_number": "SN1ELS8P1JC159925",
+                "model": "800 SKS 146",
+                "odometer_reading": 0
+            }
+        }
+    ]
+}
+
