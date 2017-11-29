@@ -74,8 +74,6 @@ Request
 +-----------------------+---------------+---------------------------------------+
 | model                 | No            | model of automobile records.          |
 +-----------------------+---------------+---------------------------------------+
-| cat_id                | No            | See Below for Categories Supported    |
-+-----------------------+---------------+---------------------------------------+
 | year_manufactured     | No            | year_manufactured of automobile       |
 |                       |               | records.                              |
 +-----------------------+---------------+---------------------------------------+
@@ -135,16 +133,6 @@ After the API Token, use exclude_fields=<field name>
 This will prevent chrome_equipments, chrome_packages, and chrome_consumer_info sections from being sent.
 
 
-
-Categories Supported
---------------------
-
-- 2: New Automobile
-- 3: Used Automobile
-- 1009: Motorcycles
-- 1060: ATV/UTV
-- 1064: Snowmobiles
-- 1061: Campers/RV
 
 JSON Return Example:
 ~~~~~~~~~~~~~~~~~~~~~~
