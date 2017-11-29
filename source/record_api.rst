@@ -124,7 +124,7 @@ This filter will only return the chrome equipments section and vehicles with sta
 Exclude Sections of JSON return
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our API returns many data points, like inspection_points, chrome_equipments and so on. If you do not require a specific data point, you have the ability to exclude it from being sent.
+The API returns many data points, like inspection_points, chrome_equipments and so on. If you do not require a specific data point, you have the ability to exclude it from being sent.
 Here is an example on how to use it:
 
 After the API Token, use exclude_fields=<field name>
