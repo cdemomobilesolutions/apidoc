@@ -144,7 +144,7 @@ Categories Supported
 - 1009: Motorcycles
 - 1060: ATV/UTV
 - 1064: Snowmobiles
-
+- 1061: Campers/RV
 
 JSON Return Example:
 ~~~~~~~~~~~~~~~~~~~~~~
