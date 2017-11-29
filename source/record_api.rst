@@ -15,6 +15,13 @@ Export Records API
 
   GET /records-export HTTP/1.1
 
+General Notes:
+---------------
+
+- Page will always be 1 unless otherwise specified
+- Page Size will be set to a default value of 10 records
+
+
 Request
 ~~~~~~~
 
@@ -74,9 +81,9 @@ Request
 +-----------------------+---------------+---------------------------------------+
 | page_size             | No            | default is 10                         |
 +-----------------------+---------------+---------------------------------------+
-| exclude_fields        | No            | fields do not want to return.         |
-|                       |               | separate by ','.                      |
-|                       |               | like chrome_equipments,chrome_packages|
+| exclude_fields        | No            | Fields you do not require.            |
+|                       |               | separate by a comma                   |
+|                       |               | Ex: chrome_equipments,chrome_packages |
 +-----------------------+---------------+---------------------------------------+
 
 Response
@@ -91,8 +98,6 @@ Response
 +-----------------------+-------------------------------------------------------+
 | status                | Vehicle Status                                        |
 +-----------------------+-------------------------------------------------------+
-| ...                   | ...                                                   |
-+-----------------------+-------------------------------------------------------+
 | detail                | detail                                                |
 +-----------------------+-------------------------------------------------------+
 | inspection_points     | inspection_points                                     |
@@ -103,6 +108,8 @@ Response
 +-----------------------+-------------------------------------------------------+
 | chrome_consumer_info  | chrome_consumer_info                                  |
 +-----------------------+-------------------------------------------------------+
+
+
 
 Return Specific Fields
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -121,7 +128,7 @@ Our API returns many data points, like inspection_points, chrome_equipments and 
 Here is an example on how to use it:
 
 After the API Token, use exclude_fields=<field name>
--exclude_fields=chrome_equipments,chrome_packages,chrome_consumer_info
+- exclude_fields=chrome_equipments,chrome_packages,chrome_consumer_info
 
 This will prevent chrome_equipments, chrome_packages, and chrome_consumer_info sections from being sent.
 
@@ -140,13 +147,13 @@ JSON Return Example:
       },
       "paginated_results": [
           {
-              "inspection_id": "20171122ngbwkmep",
-              "title": "2018 Jeep Cherokee",
+              "inspection_id": "20170930xufrocty",
+              "title": "2015 Ford Fusion",
               "status": 1,
               "staging_flag": 0,
               "store": {
-                  "id": 1031366,
-                  "name": "Great West Chrysler"
+                  "id": 1031568,
+                  "name": "Store Name"
               },
               "product": {
                   "id": 1001,
@@ -162,7 +169,7 @@ JSON Return Example:
               },
               "style": {
                   "id": 6,
-                  "description": "4 Door Sport Utility"
+                  "description": "4 Door Sedan"
               },
               "dms_status": {
                   "status": "Available",
@@ -177,7 +184,7 @@ JSON Return Example:
               "country_code": "CA",
               "photo_count": 0,
               "days_in_stock": 1,
-              "detail_page_url": "http://live.cdemo.com/view-details/automobiles/new/2018-jeep-cherokee/1eGjnaVD",
+              "detail_page_url": "http://live.cdemo.com/view-details/...",
               "inventory_date": "2017-11-22T12:53:49Z",
               "deficiency_flag": null,
               "repair_info_flag": null,
@@ -185,7 +192,7 @@ JSON Return Example:
               "invoice_price": null,
               "listing_currency": "CAD",
               "sale_price": null,
-              "listing_price": "48260.00",
+              "listing_price": "18260.00",
               "listing_comment": "",
               "wholesale_comment": null,
               "msrp": null,
@@ -201,8 +208,8 @@ JSON Return Example:
               "youtube_video_id": null,
               "youtube_embed_url": "",
               "urls_for_360_image": null,
-              "primary_photo_url": "http://static.cdemo.com/65339522/1024/automobiles-new-2018-jeep-cherokee-1417868-primary-listing-photo-Image.jpg",
-              "primary_photo_thumbnail": "http://static.cdemo.com/65339522/150/automobiles-new-2018-jeep-cherokee-1417868-primary-listing-photo-Image.jpg",
+              "primary_photo_url": "http://static.cdemo.com/65339522/1024/automobiles-new-/.../.jpg",
+              "primary_photo_thumbnail": "http://static.cdemo.com/65339522/150/automobiles-new-/.../.jpg",
               "youtube_watch_url": "",
               "created_by": "system",
               "created_date": "2017-11-22T12:53:48Z",
@@ -330,200 +337,5 @@ JSON Return Example:
                   }
               ]
           },
-          {
-              "inspection_id": "20171122lbdmdyry",
-              "title": "2018 Ram 1500",
-              "status": 1,
-              "staging_flag": 0,
-              "store": {
-                  "id": 1031366,
-                  "name": "Great West Chrysler"
-              },
-              "product": {
-                  "id": 1001,
-                  "description": "Automobiles"
-              },
-              "category": {
-                  "id": 2,
-                  "description": "New Auto"
-              },
-              "item_condition": {
-                  "id": 1,
-                  "description": "New"
-              },
-              "style": {
-                  "id": 9,
-                  "description": "4 Door Pickup"
-              },
-              "dms_status": {
-                  "status": "Available",
-                  "description": "Available"
-              },
-              "record_type": {
-                  "id": 20,
-                  "description": "Auto-Generated"
-              },
-              "city": "Edmonton",
-              "region": "AB",
-              "country_code": "CA",
-              "photo_count": 0,
-              "days_in_stock": 1,
-              "detail_page_url": "http://live.cdemo.com/view-details/automobiles/new/2018-ram-1500/DlxwdakD",
-              "inventory_date": "2017-11-22T12:53:47Z",
-              "deficiency_flag": null,
-              "repair_info_flag": null,
-              "whole_sale_price": null,
-              "invoice_price": null,
-              "listing_currency": "CAD",
-              "sale_price": null,
-              "listing_price": "66675.00",
-              "listing_comment": "",
-              "wholesale_comment": null,
-              "msrp": null,
-              "financing_comment": null,
-              "bi_weekly_finance_price": null,
-              "monthly_finance_price": null,
-              "weekly_finance_price": null,
-              "down_payment": null,
-              "monthly_period": null,
-              "percent_apr": null,
-              "sale_price_start_dt": null,
-              "sale_price_end_dt": null,
-              "youtube_video_id": null,
-              "youtube_embed_url": "",
-              "urls_for_360_image": null,
-              "primary_photo_url": "http://static.cdemo.com/65339521/1024/automobiles-new-2018-ram-1500-1492797-primary-listing-photo-Image.jpg",
-              "primary_photo_thumbnail": "http://static.cdemo.com/65339521/150/automobiles-new-2018-ram-1500-1492797-primary-listing-photo-Image.jpg",
-              "youtube_watch_url": "",
-              "created_by": "system",
-              "created_date": "2017-11-22T12:53:46Z",
-              "last_mod_date": "2017-11-22T12:55:05Z",
-              "last_mod_by": "System",
-              "detail": {
-                  "trim_level": null,
-                  "year_manufactured": "2018",
-                  "certified_program": null,
-                  "vin": "1C6RR7NT2JS187635",
-                  "engine_disp": "5.7",
-                  "package_codes": null,
-                  "additional_certified_program": null,
-                  "odometer_reading": 10,
-                  "fuel_economy_hwy": "11.5 - 11.5",
-                  "drivetrain": "4WD",
-                  "make": "Ram",
-                  "certified_program_flag": null,
-                  "chrome_style_name": "Laramie 4x4 Crew Cab 5'7\" Box",
-                  "engine": "8 Cylinder Engine",
-                  "model_codes": null,
-                  "color_code": "PW7",
-                  "interior_colour": "Leather",
-                  "seating_capacity": null,
-                  "fuel_economy_unit": "L/100 km",
-                  "option_codes": null,
-                  "number_passenger_doors": 4,
-                  "fuel_economy_city": "16.1 - 16.1",
-                  "exterior_colour": "White[Bright White]",
-                  "horse_power": "395.0",
-                  "cylinders": "8",
-                  "odometer_type": "Kilometers",
-                  "transmission": "8-Speed A/T",
-                  "horse_power_rpm": "5600",
-                  "model": "1500",
-                  "fuel_type": "Gasoline Fuel"
-              },
-              "inspection_points": [
-                  {
-                      "stage_text": "Vehicle Info",
-                      "question_text": "Select if ODOMETER READING is in MILES or KILOMETERS",
-                      "question_text_short": "Odometer Type",
-                      "answer": "Kilometers",
-                      "answer_parent": null,
-                      "photo_url": null,
-                      "photo_point_flag": 0,
-                      "damage_flag": false,
-                      "option_flag": false,
-                      "stock_photo_flag": 0,
-                      "severity_descriptor": null,
-                      "wear_tear_flag": 0,
-                      "chargeable_flag": 0,
-                      "photo_available_flag": false,
-                      "last_mod_date": "2017-11-22T12:53:46Z"
-                  },
-                  {
-                      "stage_text": "Vehicle Info",
-                      "question_text": "Select the fuel type for this vehicle.\r\n(Single Choice Answer)",
-                      "question_text_short": "Vehicle Fuel Type",
-                      "answer": "Gasoline",
-                      "answer_parent": null,
-                      "photo_url": null,
-                      "photo_point_flag": 0,
-                      "damage_flag": false,
-                      "option_flag": true,
-                      "stock_photo_flag": 0,
-                      "severity_descriptor": null,
-                      "wear_tear_flag": 0,
-                      "chargeable_flag": 0,
-                      "photo_available_flag": false,
-                      "last_mod_date": "2017-11-22T12:54:14Z"
-                  }
-              ],
-              "chrome_equipments": {
-                  "SAFETY": [
-                      "Electronic Stability Control (ESC)",
-                      "ABS And Driveline Traction Control",
-                      "Side Impact Beams",
-                      "Dual Stage Driver And Passenger Seat-Mounted Side Airbags",
-                      "ParkSense Rear Parking Sensors",
-                      "Tire Specific Low Tire Pressure Warning",
-                      "Dual Stage Driver And Passenger Front Airbags",
-                      "Airbag Occupancy Sensor",
-                      "Curtain 1st And 2nd Row Airbags",
-                      "Rear Child Safety Locks",
-                      "Outboard Front Lap And Shoulder Safety Belts -inc: Rear Centre 3 Point, Height Adjusters and Pretensioners",
-                      "ParkView Back-Up Camera"
-                  ],
-                  "EXTERIOR": [
-                      "Wheels: 20\" x 9\" Chrome-Clad Aluminum",
-                      "Tires: P275/60R20 BSW All-Season",
-                      "Regular Box Style",
-                      "Goodyear Brand Tires",
-                      "Steel Spare Wheel",
-                      "Full-Size Spare Tire Stored Underbody w/Crankdown",
-                      "Clearcoat Paint",
-                      "Chrome Front Bumper w/Body-Coloured Rub Strip/Fascia Accent",
-                      "Chrome Rear Step Bumper",
-                      "Black Side Windows Trim and Black Front Windshield Trim",
-                      "Chrome Door Handles",
-                      "Body-Coloured Fender Flares",
-                      "Chrome Power w/Tilt Down Heated Auto Dimming Side Mirrors w/Power Folding and Turn Signal Indicator",
-                      "Power Rear Window",
-                      "Variable Intermittent Wipers",
-                      "Deep Tinted Glass",
-                      "Galvanized Steel/Aluminum Panels",
-                      "Chrome Grille",
-                      "Front License Plate Bracket",
-                      "Tailgate Rear Cargo Access",
-                      "Tailgate/Rear Door Lock Included w/Power Door Locks",
-                      "Cargo Lamp w/High Mount Stop Light",
-                      "Fully Automatic Projector Beam Halogen Daytime Running Headlamps w/Delay-Off",
-                      "Front Fog Lamps",
-                      "Perimeter/Approach Lights",
-                      "LED Brakelights"
-                  ]
-              },
-              "chrome_packages": [],
-              "chrome_consumer_info": [
-                  {
-                      "info_name": "Basic Years",
-                      "info_value": "3",
-                      "info_type": "Warranty"
-                  },
-                  {
-                      "info_name": "Basic Miles/km",
-                      "info_value": "60,000",
-                      "info_type": "Warranty"
-                  }
-              ]
-          }
       ]
   }
