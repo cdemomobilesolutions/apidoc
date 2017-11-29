@@ -342,12 +342,10 @@ JSON Return Example:
   }
 
 
-Snowmobile
------------
+  Snowmobiles
 
-.. code-block:: python
 
-{
+  {
     "links": {
         "next": "https://api.cdemo.com/v3/records?access_token=H2RbYJSOXcksNlx1qOLdOhkWOaqYAU&page=2&page_size=1",
         "prev": null,
@@ -439,4 +437,9 @@ Snowmobile
         }
     ]
 }
+
+
+
+
+
 
