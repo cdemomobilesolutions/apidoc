@@ -353,13 +353,13 @@ JSON Return Example:
     },
     "paginated_results": [
         {
-            "inspection_id": "20170930lsjswteu",
+            "inspection_id": "20170930lsjswte",
             "title": "2018 Polaris 800 SKS 146 ",
             "status": 1,
             "staging_flag": 0,
             "store": {
                 "id": 1066110,
-                "name": "Smart Cat"
+                "name": "Store Name"
             },
             "product": {
                 "id": 1064,
@@ -390,7 +390,7 @@ JSON Return Example:
             "country_code": "CA",
             "photo_count": 0,
             "days_in_stock": 61,
-            "detail_page_url": "http://live.cdemo.com/view-details/snowmobiles/new/2018-polaris-800-sks-146-/1Lzdxq3D",
+            "detail_page_url": "http://live.cdemo.com/view-details/snowmobiles/...",
             "inventory_date": "2017-09-30T10:46:13Z",
             "deficiency_flag": null,
             "repair_info_flag": null,
