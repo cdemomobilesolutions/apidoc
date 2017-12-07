@@ -44,6 +44,8 @@ Request
 +-----------------------+---------------+---------------------------------------+
 | category_id           | No            | See Below                             |
 +-----------------------+---------------+---------------------------------------+
+| product_id            | No            | See Below                             |
++-----------------------+---------------+---------------------------------------+
 | record_type_id        | No            | Record Type ID                        |
 +-----------------------+---------------+---------------------------------------+
 | status                | No            | status code: 0 - In-Progress, 1 -     |
@@ -114,11 +116,10 @@ After the API Token, use exclude_fields=<field name>
 This will prevent chrome_equipments, chrome_packages, and chrome_consumer_info sections from being sent.
 
 
-Category IDs
+Product IDs
 -------------
 
-- 2: New Automobile
-- 3: Used Automobile
+- 1001: Automobile
 - 1009: Motorcycle
 - 1060: ATV/UTV
 - 1064: Snowmobile
