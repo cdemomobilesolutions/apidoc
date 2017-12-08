@@ -433,13 +433,13 @@ JSON Return Example:
 
     {
     "links": {
-        "next": "https://api.cdemo.com/v3/records?access_token=H2RbYJSOXcksNlx1qOLdOhkWOaqYAU&product_id=1060&page=2",
+        "next": "https://api.cdemo.com/v3/records?access_token=<xxx>&product_id=1060&page=2",
         "prev": null,
         "total_results": 134
     },
     "paginated_results": [
         {
-            "inspection_id": "20170930ympexwkr",
+            "inspection_id": "20170930ymp",
             "title": "2018 Polaris 45O HO SPORTSMAN ",
             "status": 1,
             "staging_flag": 0,
