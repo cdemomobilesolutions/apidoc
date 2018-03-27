@@ -1,22 +1,20 @@
-=================
-API Reference
-=================
 
-API End Points
-=================
-+------------+-----------------------------------------------------------+
-| Production | https://api.cdemo.com/v3/records-export?access_token=<xxx>|
-+------------+-----------------------------------------------------------+
+========
+Records
+========
 
-Export Records API
-=================
+List records of a store.
 
 .. sourcecode:: http
 
-  GET /records-export HTTP/1.1
+  GET /records HTTP/1.1
 
-Request
-~~~~~~~
++------------+-----------------------------------------------------------+
+| Production | https://api.cdemo.com/v3/records?access_token=<xxx>       |
++------------+-----------------------------------------------------------+
+
+Parameters
+==========
 
 +-----------------------+---------------+---------------------------------------+
 | Parameters            | Is Mandatory  | Notes                                 |
@@ -76,431 +74,358 @@ Request
 +-----------------------+---------------+---------------------------------------+
 | exclude_fields        | No            | fields do not want to return.         |
 |                       |               | separate by ','.                      |
-|                       |               | like chrome_equipments,chrome_packages|
+|                       |               | like store,category                   |
++-----------------------+---------------+---------------------------------------+
+| fields                | No            | fields want to return.                |
+|                       |               | separate by ','.                      |
+|                       |               | like store,category                   |
 +-----------------------+---------------+---------------------------------------+
 
 Response
 ~~~~~~~~
 
-+-----------------------+-------------------------------------------------------+
-| Field Name            | Notes                                                 |
-+=======================+=======================================================+
-| inspection_id         | inspection_id                                         |
-+-----------------------+-------------------------------------------------------+
-| title                 | inspection_id                                         |
-+-----------------------+-------------------------------------------------------+
-| status                | inspection_id                                         |
-+-----------------------+-------------------------------------------------------+
-| ...                   | ...                                                   |
-+-----------------------+-------------------------------------------------------+
-| detail                | detail                                                |
-+-----------------------+-------------------------------------------------------+
-| inspection_points     | inspection_points                                     |
-+-----------------------+-------------------------------------------------------+
-| chrome_equipments     | chrome_equipments                                     |
-+-----------------------+-------------------------------------------------------+
-| chrome_packages       | chrome_packages                                       |
-+-----------------------+-------------------------------------------------------+
-| chrome_consumer_info  | chrome_consumer_info                                  |
-+-----------------------+-------------------------------------------------------+
-
-
-Example:
+.. +-----------------------+-------------------------------------------------------+
+  | Field Name            | Notes                                                 |
+  +=======================+=======================================================+
+  | inspection_id         | inspection_id                                         |
+  +-----------------------+-------------------------------------------------------+
+  | title                 | inspection_id                                         |
+  +-----------------------+-------------------------------------------------------+
+  | status                | inspection_id                                         |
+  +-----------------------+-------------------------------------------------------+
+  | ...                   | ...                                                   |
+  +-----------------------+-------------------------------------------------------+
+  | detail                | detail                                                |
+  +-----------------------+-------------------------------------------------------+
+  | inspection_points     | inspection_points                                     |
+  +-----------------------+-------------------------------------------------------+
+  | chrome_equipments     | chrome_equipments                                     |
+  +-----------------------+-------------------------------------------------------+
+  | chrome_packages       | chrome_packages                                       |
+  +-----------------------+-------------------------------------------------------+
+  | chrome_consumer_info  | chrome_consumer_info                                  |
+  +-----------------------+-------------------------------------------------------+
 
 .. code-block:: python
 
   {
-      "links": {
-          "next": "https://api.cdemo.com/v3/records-export?access_token=xxx&page=2&page_size=2",
-          "prev": null,
-          "total_results": 506
-      },
-      "paginated_results": [
-          {
-              "inspection_id": "20171122ngbwkmep",
-              "title": "2018 Jeep Cherokee",
-              "status": 1,
-              "staging_flag": 0,
-              "store": {
-                  "id": 1031366,
-                  "name": "Great West Chrysler"
-              },
-              "product": {
-                  "id": 1001,
-                  "description": "Automobiles"
-              },
-              "category": {
-                  "id": 2,
-                  "description": "New Auto"
-              },
-              "item_condition": {
-                  "id": 1,
-                  "description": "New"
-              },
-              "style": {
-                  "id": 6,
-                  "description": "4 Door Sport Utility"
-              },
-              "dms_status": {
-                  "status": "Available",
-                  "description": "Available"
-              },
-              "record_type": {
-                  "id": 20,
-                  "description": "Auto-Generated"
-              },
-              "city": "Edmonton",
-              "region": "AB",
-              "country_code": "CA",
-              "photo_count": 0,
-              "days_in_stock": 1,
-              "detail_page_url": "http://live.cdemo.com/view-details/automobiles/new/2018-jeep-cherokee/1eGjnaVD",
-              "inventory_date": "2017-11-22T12:53:49Z",
-              "deficiency_flag": null,
-              "repair_info_flag": null,
-              "whole_sale_price": null,
-              "invoice_price": null,
-              "listing_currency": "CAD",
-              "sale_price": null,
-              "listing_price": "48260.00",
-              "listing_comment": "",
-              "wholesale_comment": null,
-              "msrp": null,
-              "financing_comment": null,
-              "bi_weekly_finance_price": null,
-              "monthly_finance_price": null,
-              "weekly_finance_price": null,
-              "down_payment": null,
-              "monthly_period": null,
-              "percent_apr": null,
-              "sale_price_start_dt": null,
-              "sale_price_end_dt": null,
-              "youtube_video_id": null,
-              "youtube_embed_url": "",
-              "urls_for_360_image": null,
-              "primary_photo_url": "http://static.cdemo.com/65339522/1024/automobiles-new-2018-jeep-cherokee-1417868-primary-listing-photo-Image.jpg",
-              "primary_photo_thumbnail": "http://static.cdemo.com/65339522/150/automobiles-new-2018-jeep-cherokee-1417868-primary-listing-photo-Image.jpg",
-              "youtube_watch_url": "",
-              "created_by": "system",
-              "created_date": "2017-11-22T12:53:48Z",
-              "last_mod_date": "2017-11-22T12:55:01Z",
-              "last_mod_by": "System",
-              "detail": {
-                  "trim_level": null,
-                  "year_manufactured": "2018",
-                  "certified_program": null,
-                  "vin": "1C4PJMBX1JD558463",
-                  "engine_disp": "3.2",
-                  "package_codes": null,
-                  "additional_certified_program": null,
-                  "odometer_reading": 10,
-                  "fuel_economy_hwy": "9.4 - 9.9",
-                  "drivetrain": "4WD",
-                  "make": "Jeep",
-                  "certified_program_flag": null,
-                  "chrome_style_name": "Trailhawk Leather Plus 4x4",
-                  "engine": "V6 Cylinder Engine",
-                  "model_codes": null,
-                  "color_code": null,
-                  "interior_colour": "NAPPA LTHR",
-                  "seating_capacity": null,
-                  "fuel_economy_unit": "L/100 km",
-                  "option_codes": null,
-                  "number_passenger_doors": 4,
-                  "fuel_economy_city": "12.1 - 12.9",
-                  "exterior_colour": "PWY/BRIGHT WHT",
-                  "horse_power": "271.0",
-                  "cylinders": "6",
-                  "odometer_type": "Kilometers",
-                  "transmission": "9-Speed A/T",
-                  "horse_power_rpm": "6500",
-                  "model": "Cherokee",
-                  "fuel_type": "Gasoline Fuel"
-              },
-              "inspection_points": [
-                  {
-                      "stage_text": "Vehicle Info",
-                      "question_text": "Select if ODOMETER READING is in MILES or KILOMETERS",
-                      "question_text_short": "Odometer Type",
-                      "answer": "Kilometers",
-                      "answer_parent": null,
-                      "photo_url": null,
-                      "photo_point_flag": 0,
-                      "damage_flag": false,
-                      "option_flag": false,
-                      "stock_photo_flag": 0,
-                      "severity_descriptor": null,
-                      "wear_tear_flag": 0,
-                      "chargeable_flag": 0,
-                      "photo_available_flag": false,
-                      "last_mod_date": "2017-11-22T12:53:48Z"
-                  },
-                  {
-                      "stage_text": "Vehicle Info",
-                      "question_text": "Select the fuel type for this vehicle.\r\n(Single Choice Answer)",
-                      "question_text_short": "Vehicle Fuel Type",
-                      "answer": "Gasoline",
-                      "answer_parent": null,
-                      "photo_url": null,
-                      "photo_point_flag": 0,
-                      "damage_flag": false,
-                      "option_flag": true,
-                      "stock_photo_flag": 0,
-                      "severity_descriptor": null,
-                      "wear_tear_flag": 0,
-                      "chargeable_flag": 0,
-                      "photo_available_flag": false,
-                      "last_mod_date": "2017-11-22T12:54:12Z"
-                  }
-              ],
-              "chrome_equipments": {
-                  "SAFETY": [
-                      "Electronic Stability Control (ESC) And Roll Stability Control (RSC)",
-                      "Selec-Terrain ABS And Driveline Traction Control",
-                      "Side Impact Beams",
-                      "Dual Stage Driver And Passenger Seat-Mounted Side Airbags",
-                      "Tire Specific Low Tire Pressure Warning",
-                      "Dual Stage Driver And Passenger Front Airbags",
-                      "Curtain 1st And 2nd Row Airbags",
-                      "Airbag Occupancy Sensor",
-                      "Driver And Passenger Knee Airbag and Rear Side-Impact Airbag",
-                      "Rear Child Safety Locks",
-                      "Outboard Front Lap And Shoulder Safety Belts -inc: Rear Centre 3 Point, Height Adjusters and Pretensioners",
-                      "ParkView Back-Up Camera"
-                  ],
-                  "EXTERIOR": [
-                      "Wheels: 17\" x 7.5\" Off-Road Aluminum",
-                      "Tires: P245/65R17 OWL AT",
-                      "Steel Spare Wheel",
-                      "Full-Size Spare Tire Mounted Inside Under Cargo",
-                      "Paint w/Badging",
-                      "Black Front Bumper w/Coloured Bumper Insert and 2 Tow Hooks",
-                      "Black Rear Bumper w/Metal-Look Rub Strip/Fascia Accent and 1 Tow Hook",
-                      "Black Bodyside Cladding and Black Fender Flares",
-                      "Body-Coloured Door Handles",
-                      "Black Side Windows Trim",
-                      "Fixed Rear Window w/Fixed Interval Wiper and Defroster",
-                      "Deep Tinted Glass",
-                      "Variable Intermittent Wipers",
-                      "Composite/Galvanized Steel Panels",
-                      "Lip Spoiler",
-                      "Front License Plate Bracket",
-                      "Black Grille w/Metal-Look Surround",
-                      "Tailgate/Rear Door Lock Included w/Power Door Locks",
-                      "Roof Rack Rails Only",
-                      "Fully Automatic Projector Beam High Intensity Low/High Beam Daytime Running Headlamps w/Delay-Off",
-                      "Front Fog Lamps",
-                      "LED Brakelights"
-                  ]
-              },
-              "chrome_packages": [],
-              "chrome_consumer_info": [
-                  {
-                      "info_name": "Basic Years",
-                      "info_value": "3",
-                      "info_type": "Warranty"
-                  },
-                  {
-                      "info_name": "Basic Miles/km",
-                      "info_value": "60,000",
-                      "info_type": "Warranty"
-                  }
-              ]
-          },
-          {
-              "inspection_id": "20171122lbdmdyry",
-              "title": "2018 Ram 1500",
-              "status": 1,
-              "staging_flag": 0,
-              "store": {
-                  "id": 1031366,
-                  "name": "Great West Chrysler"
-              },
-              "product": {
-                  "id": 1001,
-                  "description": "Automobiles"
-              },
-              "category": {
-                  "id": 2,
-                  "description": "New Auto"
-              },
-              "item_condition": {
-                  "id": 1,
-                  "description": "New"
-              },
-              "style": {
-                  "id": 9,
-                  "description": "4 Door Pickup"
-              },
-              "dms_status": {
-                  "status": "Available",
-                  "description": "Available"
-              },
-              "record_type": {
-                  "id": 20,
-                  "description": "Auto-Generated"
-              },
-              "city": "Edmonton",
-              "region": "AB",
-              "country_code": "CA",
-              "photo_count": 0,
-              "days_in_stock": 1,
-              "detail_page_url": "http://live.cdemo.com/view-details/automobiles/new/2018-ram-1500/DlxwdakD",
-              "inventory_date": "2017-11-22T12:53:47Z",
-              "deficiency_flag": null,
-              "repair_info_flag": null,
-              "whole_sale_price": null,
-              "invoice_price": null,
-              "listing_currency": "CAD",
-              "sale_price": null,
-              "listing_price": "66675.00",
-              "listing_comment": "",
-              "wholesale_comment": null,
-              "msrp": null,
-              "financing_comment": null,
-              "bi_weekly_finance_price": null,
-              "monthly_finance_price": null,
-              "weekly_finance_price": null,
-              "down_payment": null,
-              "monthly_period": null,
-              "percent_apr": null,
-              "sale_price_start_dt": null,
-              "sale_price_end_dt": null,
-              "youtube_video_id": null,
-              "youtube_embed_url": "",
-              "urls_for_360_image": null,
-              "primary_photo_url": "http://static.cdemo.com/65339521/1024/automobiles-new-2018-ram-1500-1492797-primary-listing-photo-Image.jpg",
-              "primary_photo_thumbnail": "http://static.cdemo.com/65339521/150/automobiles-new-2018-ram-1500-1492797-primary-listing-photo-Image.jpg",
-              "youtube_watch_url": "",
-              "created_by": "system",
-              "created_date": "2017-11-22T12:53:46Z",
-              "last_mod_date": "2017-11-22T12:55:05Z",
-              "last_mod_by": "System",
-              "detail": {
-                  "trim_level": null,
-                  "year_manufactured": "2018",
-                  "certified_program": null,
-                  "vin": "1C6RR7NT2JS187635",
-                  "engine_disp": "5.7",
-                  "package_codes": null,
-                  "additional_certified_program": null,
-                  "odometer_reading": 10,
-                  "fuel_economy_hwy": "11.5 - 11.5",
-                  "drivetrain": "4WD",
-                  "make": "Ram",
-                  "certified_program_flag": null,
-                  "chrome_style_name": "Laramie 4x4 Crew Cab 5'7\" Box",
-                  "engine": "8 Cylinder Engine",
-                  "model_codes": null,
-                  "color_code": "PW7",
-                  "interior_colour": "Leather",
-                  "seating_capacity": null,
-                  "fuel_economy_unit": "L/100 km",
-                  "option_codes": null,
-                  "number_passenger_doors": 4,
-                  "fuel_economy_city": "16.1 - 16.1",
-                  "exterior_colour": "White[Bright White]",
-                  "horse_power": "395.0",
-                  "cylinders": "8",
-                  "odometer_type": "Kilometers",
-                  "transmission": "8-Speed A/T",
-                  "horse_power_rpm": "5600",
-                  "model": "1500",
-                  "fuel_type": "Gasoline Fuel"
-              },
-              "inspection_points": [
-                  {
-                      "stage_text": "Vehicle Info",
-                      "question_text": "Select if ODOMETER READING is in MILES or KILOMETERS",
-                      "question_text_short": "Odometer Type",
-                      "answer": "Kilometers",
-                      "answer_parent": null,
-                      "photo_url": null,
-                      "photo_point_flag": 0,
-                      "damage_flag": false,
-                      "option_flag": false,
-                      "stock_photo_flag": 0,
-                      "severity_descriptor": null,
-                      "wear_tear_flag": 0,
-                      "chargeable_flag": 0,
-                      "photo_available_flag": false,
-                      "last_mod_date": "2017-11-22T12:53:46Z"
-                  },
-                  {
-                      "stage_text": "Vehicle Info",
-                      "question_text": "Select the fuel type for this vehicle.\r\n(Single Choice Answer)",
-                      "question_text_short": "Vehicle Fuel Type",
-                      "answer": "Gasoline",
-                      "answer_parent": null,
-                      "photo_url": null,
-                      "photo_point_flag": 0,
-                      "damage_flag": false,
-                      "option_flag": true,
-                      "stock_photo_flag": 0,
-                      "severity_descriptor": null,
-                      "wear_tear_flag": 0,
-                      "chargeable_flag": 0,
-                      "photo_available_flag": false,
-                      "last_mod_date": "2017-11-22T12:54:14Z"
-                  }
-              ],
-              "chrome_equipments": {
-                  "SAFETY": [
-                      "Electronic Stability Control (ESC)",
-                      "ABS And Driveline Traction Control",
-                      "Side Impact Beams",
-                      "Dual Stage Driver And Passenger Seat-Mounted Side Airbags",
-                      "ParkSense Rear Parking Sensors",
-                      "Tire Specific Low Tire Pressure Warning",
-                      "Dual Stage Driver And Passenger Front Airbags",
-                      "Airbag Occupancy Sensor",
-                      "Curtain 1st And 2nd Row Airbags",
-                      "Rear Child Safety Locks",
-                      "Outboard Front Lap And Shoulder Safety Belts -inc: Rear Centre 3 Point, Height Adjusters and Pretensioners",
-                      "ParkView Back-Up Camera"
-                  ],
-                  "EXTERIOR": [
-                      "Wheels: 20\" x 9\" Chrome-Clad Aluminum",
-                      "Tires: P275/60R20 BSW All-Season",
-                      "Regular Box Style",
-                      "Goodyear Brand Tires",
-                      "Steel Spare Wheel",
-                      "Full-Size Spare Tire Stored Underbody w/Crankdown",
-                      "Clearcoat Paint",
-                      "Chrome Front Bumper w/Body-Coloured Rub Strip/Fascia Accent",
-                      "Chrome Rear Step Bumper",
-                      "Black Side Windows Trim and Black Front Windshield Trim",
-                      "Chrome Door Handles",
-                      "Body-Coloured Fender Flares",
-                      "Chrome Power w/Tilt Down Heated Auto Dimming Side Mirrors w/Power Folding and Turn Signal Indicator",
-                      "Power Rear Window",
-                      "Variable Intermittent Wipers",
-                      "Deep Tinted Glass",
-                      "Galvanized Steel/Aluminum Panels",
-                      "Chrome Grille",
-                      "Front License Plate Bracket",
-                      "Tailgate Rear Cargo Access",
-                      "Tailgate/Rear Door Lock Included w/Power Door Locks",
-                      "Cargo Lamp w/High Mount Stop Light",
-                      "Fully Automatic Projector Beam Halogen Daytime Running Headlamps w/Delay-Off",
-                      "Front Fog Lamps",
-                      "Perimeter/Approach Lights",
-                      "LED Brakelights"
-                  ]
-              },
-              "chrome_packages": [],
-              "chrome_consumer_info": [
-                  {
-                      "info_name": "Basic Years",
-                      "info_value": "3",
-                      "info_type": "Warranty"
-                  },
-                  {
-                      "info_name": "Basic Miles/km",
-                      "info_value": "60,000",
-                      "info_type": "Warranty"
-                  }
-              ]
-          }
-      ]
+    "links": {
+        "next": "https://api.cdemo.com/v3/records?access_token=xxxxxxxxxxx",
+        "prev": null,
+        "total_results": 117
+    },
+    "paginated_results": [
+        {
+            "inspection_id": "20180326ncxbjrhm",
+            "title": "2014 Ford Focus SE Hatchback - Automatic, Alloy Wheels, SYNC",
+            "status": 1,
+            "staging_flag": 0,
+            "store": {
+                "id": 20114,
+                "name": "Ride Time Certified"
+            },
+            "product": {
+                "id": 1001,
+                "description": "Automobiles"
+            },
+            "category": {
+                "id": 3,
+                "description": "Used Auto"
+            },
+            "item_condition": {
+                "id": 2,
+                "description": "Used"
+            },
+            "stocknumber": "18072",
+            "style": {
+                "id": 4,
+                "description": "4 Door Station Wagon"
+            },
+            "dms_status": {
+                "status": "0",
+                "description": "Available For Sale (0)"
+            },
+            "record_type": {
+                "id": 70,
+                "description": "Quick"
+            },
+            "city": "Winnipeg",
+            "region": "MB",
+            "country_code": "CA",
+            "photo_count": 39,
+            "days_in_stock": 1,
+            "detail_page_url": "http://live.cdemo.com/view-details/automobiles/used/2014-ford-focus-se-hatchback-automatic-alloy-wheels-sync/EPkyW88D",
+            "inventory_date": "2018-03-26T22:31:16Z",
+            "deficiency_flag": 0,
+            "repair_info_flag": null,
+            "whole_sale_price": "1.00",
+            "invoice_price": null,
+            "listing_currency": "CAD",
+            "sale_price": null,
+            "listing_price": "12500.00",
+            "listing_comment": "",
+            "wholesale_comment": null,
+            "msrp": "19699.00",
+            "financing_comment": "",
+            "bi_weekly_finance_price": null,
+            "monthly_finance_price": null,
+            "weekly_finance_price": null,
+            "down_payment": null,
+            "monthly_period": null,
+            "percent_apr": null,
+            "sale_price_start_dt": null,
+            "sale_price_end_dt": null,
+            "youtube_video_id": "",
+            "youtube_embed_url": "",
+            "urls_for_360_image": "https://tours.motorstreet360.com/1FADP3K20EL365044",
+            "primary_photo_url": "http://static.cdemo.com/65359357/1024/automobiles-used-2014-ford-focus-se-hatchback-automatic-alloy-wheels-sync-1729241-primary-listing-photo-Image.jpg",
+            "primary_photo_thumbnail": "http://static.cdemo.com/65359357/150/automobiles-used-2014-ford-focus-se-hatchback-automatic-alloy-wheels-sync-1729241-primary-listing-photo-Image.jpg",
+            "youtube_watch_url": "",
+            "created_by": "alexmac",
+            "created_date": "2018-03-26T21:53:13Z",
+            "last_mod_date": "2018-03-26T23:02:46Z",
+            "last_mod_by": "System",
+            "detail": {
+                "trim_level": "SE",
+                "year_manufactured": "2014",
+                "certified_program": null,
+                "vin": "1FADP3K20EL365044",
+                "engine_disp": "2.0",
+                "package_codes": null,
+                "additional_certified_program": "",
+                "odometer_reading": 88800,
+                "fuel_economy_hwy": null,
+                "drivetrain": "Front Wheel Drive",
+                "make": "Ford",
+                "certified_program_flag": "",
+                "chrome_style_name": "5dr HB SE",
+                "engine": "4 Cylinder Engine",
+                "model_codes": null,
+                "color_code": "UH",
+                "interior_colour": "Charcoal Black w/Steel",
+                "seating_capacity": "",
+                "fuel_economy_unit": null,
+                "option_codes": null,
+                "number_passenger_doors": 4,
+                "fuel_economy_city": null,
+                "exterior_colour": "Black[Tuxedo Black Metallic]",
+                "horse_power": null,
+                "cylinders": "4",
+                "odometer_type": "Kilometers",
+                "transmission": "6-Speed A/T",
+                "horse_power_rpm": null,
+                "model": "Focus",
+                "fuel_type": "Flex Fuel Capability"
+            }
+        },
+        {
+            "inspection_id": "20180324jfwvyhjl",
+            "title": "2015 Jeep Cherokee Trailhawk 4WD - Mango Tango Pearl, UConnect, Backup Camera, Navigation",
+            "status": 1,
+            "staging_flag": 0,
+            "store": {
+                "id": 20114,
+                "name": "Ride Time Certified"
+            },
+            "product": {
+                "id": 1001,
+                "description": "Automobiles"
+            },
+            "category": {
+                "id": 3,
+                "description": "Used Auto"
+            },
+            "item_condition": {
+                "id": 2,
+                "description": "Used"
+            },
+            "stocknumber": "18078",
+            "style": {
+                "id": 6,
+                "description": "4 Door Sport Utility"
+            },
+            "dms_status": {
+                "status": "0",
+                "description": "Available For Sale (0)"
+            },
+            "record_type": {
+                "id": 70,
+                "description": "Quick"
+            },
+            "city": "Winnipeg",
+            "region": "MB",
+            "country_code": "CA",
+            "photo_count": 39,
+            "days_in_stock": 1,
+            "detail_page_url": "http://live.cdemo.com/view-details/automobiles/used/2015-jeep-cherokee-trailhawk-4wd-mango-tango-pearl-uconnect-backup-camera-navigation/D4VGNaj1",
+            "inventory_date": "2018-03-26T15:24:37Z",
+            "deficiency_flag": 0,
+            "repair_info_flag": null,
+            "whole_sale_price": "1.00",
+            "invoice_price": null,
+            "listing_currency": "CAD",
+            "sale_price": null,
+            "listing_price": "27000.00",
+            "listing_comment": "",
+            "wholesale_comment": null,
+            "msrp": "32545.00",
+            "financing_comment": "",
+            "bi_weekly_finance_price": null,
+            "monthly_finance_price": null,
+            "weekly_finance_price": null,
+            "down_payment": null,
+            "monthly_period": null,
+            "percent_apr": null,
+            "sale_price_start_dt": null,
+            "sale_price_end_dt": null,
+            "youtube_video_id": "",
+            "youtube_embed_url": "",
+            "urls_for_360_image": "https://tours.motorstreet360.com/1C4PJMBB7FW576711",
+            "primary_photo_url": "http://static.cdemo.com/65359248/1024/automobiles-used-2015-jeep-cherokee-trailhawk-4wd-mango-tango-pearl-uconnect-backup-camera-1547238-primary-listing-photo-Image.jpg",
+            "primary_photo_thumbnail": "http://static.cdemo.com/65359248/150/automobiles-used-2015-jeep-cherokee-trailhawk-4wd-mango-tango-pearl-uconnect-backup-camera-1547238-primary-listing-photo-Image.jpg",
+            "youtube_watch_url": "",
+            "created_by": "alexmac",
+            "created_date": "2018-03-24T22:44:03Z",
+            "last_mod_date": "2018-03-27T04:31:25Z",
+            "last_mod_by": "System",
+            "detail": {
+                "trim_level": "Trailhawk",
+                "year_manufactured": "2015",
+                "certified_program": null,
+                "vin": "1C4PJMBB7FW576711",
+                "engine_disp": "2.4",
+                "package_codes": null,
+                "additional_certified_program": "",
+                "odometer_reading": 84205,
+                "fuel_economy_hwy": "9.4 - 9.4",
+                "drivetrain": "Four Wheel Drive",
+                "make": "Jeep",
+                "certified_program_flag": "",
+                "chrome_style_name": "4WD 4dr Trailhawk",
+                "engine": "4 Cylinder Engine",
+                "model_codes": null,
+                "color_code": "PVG",
+                "interior_colour": "Black",
+                "seating_capacity": "",
+                "fuel_economy_unit": "L/100 km",
+                "option_codes": null,
+                "number_passenger_doors": 4,
+                "fuel_economy_city": "12.1 - 12.1",
+                "exterior_colour": "Orange[Mango Tango Pearl]",
+                "horse_power": "184.0",
+                "cylinders": "4",
+                "odometer_type": "Kilometers",
+                "transmission": "9-Speed A/T",
+                "horse_power_rpm": "6400",
+                "model": "Cherokee",
+                "fuel_type": "Gasoline Fuel"
+            }
+        },
+        {
+            "inspection_id": "20180324dncnvhsu",
+            "title": "2014 Chevrolet Cruze 2LT - RS Package, Leather, Sunroof, Alloy Wheels, Heated Seats",
+            "status": 1,
+            "staging_flag": 0,
+            "store": {
+                "id": 20114,
+                "name": "Ride Time Certified"
+            },
+            "product": {
+                "id": 1001,
+                "description": "Automobiles"
+            },
+            "category": {
+                "id": 3,
+                "description": "Used Auto"
+            },
+            "item_condition": {
+                "id": 2,
+                "description": "Used"
+            },
+            "stocknumber": "18063",
+            "style": {
+                "id": 2,
+                "description": "4 Door Car"
+            },
+            "dms_status": {
+                "status": "0",
+                "description": "Available For Sale (0)"
+            },
+            "record_type": {
+                "id": 70,
+                "description": "Quick"
+            },
+            "city": "Winnipeg",
+            "region": "MB",
+            "country_code": "CA",
+            "photo_count": 39,
+            "days_in_stock": 3,
+            "detail_page_url": "http://live.cdemo.com/view-details/automobiles/used/2014-chevrolet-cruze-2lt-rs-package-leather-sunroof-alloy-wheels-heated-seats/1Lz8ly5D",
+            "inventory_date": "2018-03-24T20:17:59Z",
+            "deficiency_flag": 0,
+            "repair_info_flag": null,
+            "whole_sale_price": "1.00",
+            "invoice_price": null,
+            "listing_currency": "CAD",
+            "sale_price": null,
+            "listing_price": "13500.00",
+            "listing_comment": "Meet our stellar 2014 Chevrolet Cruze 2LT Automatic Sedan with a fluid style and sporty substance as displayed in Silver Ice Metallic! Powered by a 1.4 Liter TurboCharged 4 Cylinder that offers 138hp while paired with a smooth shifting 6 Speed Automatic transmission that does its job seamlessly and with perfection. Enjoy the way the tight suspension of this Front Wheel Drive Cruze grabs the curves while it delivers an incredible 6.2L/100km on the open road! You will love the sweet aerodynamics and distinct alloy wheels!\n\nOur 2LT Automatic is designed for the driver with features like a leather-wrapped shift knob, heated seating, a sunroof and steering wheel with audio controls. You will also enjoy the full-color MyLink touchscreen infotainment center that integrates wireless connectivity through Bluetooth to safely and quickly access your smartphone apps while on the go!\n\nThis Cruze from Chevrolet provides you with the security, performance, and affordability you are looking for. Some of the safety features include StabiliTrak, an army of airbags, and more to make Our Cruze one of the safest machines out there. Print this page and call us Now... We Know You Will Enjoy Your Test Drive Towards Ownership! We are Family Owned and here to make your car buying and ownership enjoyable!",
+            "wholesale_comment": null,
+            "msrp": "21395.00",
+            "financing_comment": "",
+            "bi_weekly_finance_price": null,
+            "monthly_finance_price": null,
+            "weekly_finance_price": null,
+            "down_payment": null,
+            "monthly_period": null,
+            "percent_apr": null,
+            "sale_price_start_dt": null,
+            "sale_price_end_dt": null,
+            "youtube_video_id": "",
+            "youtube_embed_url": "",
+            "urls_for_360_image": "https://tours.motorstreet360.com/1G1PE5SB6E7156627",
+            "primary_photo_url": "http://static.cdemo.com/65359243/1024/automobiles-used-2014-chevrolet-cruze-2lt-rs-package-leather-sunroof-alloy-wheels-heated-seats-1370298-primary-listing-photo-Image.jpg",
+            "primary_photo_thumbnail": "http://static.cdemo.com/65359243/150/automobiles-used-2014-chevrolet-cruze-2lt-rs-package-leather-sunroof-alloy-wheels-heated-seats-1370298-primary-listing-photo-Image.jpg",
+            "youtube_watch_url": "",
+            "created_by": "alexmac",
+            "created_date": "2018-03-24T19:40:04Z",
+            "last_mod_date": "2018-03-26T15:44:06Z",
+            "last_mod_by": "dealerassistnow",
+            "detail": {
+                "trim_level": "2LT",
+                "year_manufactured": "2014",
+                "certified_program": null,
+                "vin": "1G1PE5SB6E7156627",
+                "engine_disp": "1.4",
+                "package_codes": null,
+                "additional_certified_program": "",
+                "odometer_reading": 97493,
+                "fuel_economy_hwy": "5.2 - 5.2",
+                "drivetrain": "Front Wheel Drive",
+                "make": "Chevrolet",
+                "certified_program_flag": "No",
+                "chrome_style_name": "4dr Sdn 2LT",
+                "engine": "4 Cylinder Engine",
+                "model_codes": null,
+                "color_code": "GAN",
+                "interior_colour": "Jet Black",
+                "seating_capacity": "",
+                "fuel_economy_unit": "L/100 km",
+                "option_codes": null,
+                "number_passenger_doors": 4,
+                "fuel_economy_city": "7.8 - 7.8",
+                "exterior_colour": "Silver[Silver Ice Metallic]",
+                "horse_power": "138.0",
+                "cylinders": "4",
+                "odometer_type": "Kilometers",
+                "transmission": "6-Speed A/T",
+                "horse_power_rpm": "4900",
+                "model": "Cruze",
+                "fuel_type": "Gasoline Fuel"
+            }
+        }
+    ]
   }
+
+.. .. note::
+    test
