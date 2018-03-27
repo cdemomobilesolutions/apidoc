@@ -12,7 +12,12 @@ cDemo Rest API V3
    :glob:
 
 
-   record_api
+   records_api
+   record_detail_api
+   inspection_points_api
+   chrome_equipments_api
+   chrome_packages_api
+   chrome_consumer_info_api
 
 .. Indices and tables
 .. ==================
