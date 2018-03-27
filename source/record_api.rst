@@ -21,45 +21,28 @@ Parameters
 +=======================+===============+=======================================+
 | access_token          | Yes           | API Token                             |
 +-----------------------+---------------+---------------------------------------+
-| date_from             | No            | format like 2017-11-16                |
+| days_in_stock_from    | No            | format like 2017-11-16                |
 +-----------------------+---------------+---------------------------------------+
-| date_to               | No            | format like 2017-11-16                |
+| days_in_stock_to      | No            | format like 2017-11-16                |
 +-----------------------+---------------+---------------------------------------+
-| price_from            | No            | listing_price range from, like 100.00 |
+| created_date_from     | No            | format like 2017-11-16                |
 +-----------------------+---------------+---------------------------------------+
-| price_to              | No            | listing_price range to, like 100.00   |
+| created_date_to       | No            | format like 2017-11-16                |
 +-----------------------+---------------+---------------------------------------+
-| has_comment           | No            | whether or not have comment,          |
-|                       |               | value 'YES' or 'NO'                   |
-+-----------------------+---------------+---------------------------------------+
-| has_video             | No            | whether or not have video,            |
-|                       |               | value 'YES' or 'NO'                   |
-+-----------------------+---------------+---------------------------------------+
-| has_price             | No            | whether or not have listing price,    |
-|                       |               | value 'YES' or 'NO'                   |
-+-----------------------+---------------+---------------------------------------+
-| has_sale_price        | No            | whether or not have sale price,       |
-|                       |               | value 'YES' or 'NO'                   |
-+-----------------------+---------------+---------------------------------------+
-| real_photo_count      | No            | whether or not have photos,           |
-|                       |               | value 'YES' or 'NO'                   |
-+-----------------------+---------------+---------------------------------------+
-| is_certified          | No            | whether or not is certified,          |
-|                       |               | value 'YES' or 'NO'                   |
-+-----------------------+---------------+---------------------------------------+
-| has_damage            | No            | whether or not is deficiency,         |
-|                       |               | value 'YES' or 'NO'                   |
+| store_id              | No            | Store ID                              |
 +-----------------------+---------------+---------------------------------------+
 | is_staging            | No            | value 0 or 1                          |
 +-----------------------+---------------+---------------------------------------+
-| dms_status_id         | No            | dms_status_id                         |
+| category_id           | No            | See Below                             |
++-----------------------+---------------+---------------------------------------+
+| product_id            | No            | See Below                             |
++-----------------------+---------------+---------------------------------------+
+| record_type_id        | No            | Record Type ID                        |
 +-----------------------+---------------+---------------------------------------+
 | status                | No            | status code: 0 - In-Progress, 1 -     |
 |                       |               | Available and 2 - Archived            |
 +-----------------------+---------------+---------------------------------------+
-| stocknumber           | No            | stock number of record.               |
-+-----------------------+---------------+---------------------------------------+
-| condition_id          | No            | item condition id.                    |
+| item_condition_id     | No            | item condition id.                    |
 +-----------------------+---------------+---------------------------------------+
 | make                  | No            | make of automobile records.           |
 +-----------------------+---------------+---------------------------------------+
@@ -106,11 +89,13 @@ Response
   | chrome_consumer_info  | chrome_consumer_info                                  |
   +-----------------------+-------------------------------------------------------+
 
+
+
 .. code-block:: python
 
   {
     "links": {
-        "next": "https://api.cdemo.com/v3/records?access_token=xxxxxxxxxxx",
+        "next": "https://api.cdemo.com/v3/records?access_token=xxxxxxxxxx&page=2&page_size=3",
         "prev": null,
         "total_results": 117
     },
@@ -121,7 +106,7 @@ Response
             "status": 1,
             "staging_flag": 0,
             "store": {
-                "id": 20114,
+                "id": 1,
                 "name": "Ride Time Certified"
             },
             "product": {
@@ -224,7 +209,7 @@ Response
             "status": 1,
             "staging_flag": 0,
             "store": {
-                "id": 20114,
+                "id": 11,
                 "name": "Ride Time Certified"
             },
             "product": {
@@ -327,7 +312,7 @@ Response
             "status": 1,
             "staging_flag": 0,
             "store": {
-                "id": 20114,
+                "id": 11,
                 "name": "Ride Time Certified"
             },
             "product": {
@@ -427,5 +412,11 @@ Response
     ]
   }
 
-.. .. note::
-    test
+
+.. note::
+  - 1001: Automobile
+  - 1009: Motorcycle
+  - 1060: ATV/UTV
+  - 1064: Snowmobile
+  - 1061: Campers/RV
+
