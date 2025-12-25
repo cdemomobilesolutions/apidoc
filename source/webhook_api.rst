@@ -9,14 +9,16 @@ Usage of cDemo Webhooks
 2. Register a Webhook
 3. Receive Webhook Notifications
 
-If a webhook is configured, any time a record status is changed or record is updated, cdemo webhook will send an outgoing HTTP request to a your webhook receiver URL with a payload containing relevant information about the event.:
+If a webhook is configured, any time a record status is changed or record is updated, cdemo webhook will send an outgoing HTTP request to a your webhook receiver URL with a payload containing relevant information about the event:
 
-POST HTTP/1.1
-host: <your-webhook-receiver-domain>
-user-agent: cDemo Webhook Client/1.0
-cdemo-webhook-uuid: <uuid of the webhook>
-cdemo-webhook-signature-v1: <signature of the payload>
-cdemo-webhook-request-timestamp: <timestamp of the request>
+.. code-block::
+
+  POST HTTP/1.1
+  host: <your-webhook-receiver-domain>
+  user-agent: cDemo Webhook Client/1.0
+  cdemo-webhook-uuid: <uuid of the webhook>
+  cdemo-webhook-signature-v1: <signature of the payload>
+  cdemo-webhook-request-timestamp: <timestamp of the request>
 
 .. code-block:: python
     {
