@@ -12,8 +12,8 @@ You can even do:
 
 ``` python
 
-{
+  {
     "id: 1,
     "title": "text"
-}
+  }
 ```

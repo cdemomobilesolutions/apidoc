@@ -39,7 +39,7 @@ templates_path = ['_templates']
 
 # Add marddown parser
 source_parsers = {
-  '.md': CommonMarkParser,
+    '.md': CommonMarkParser,
 }
 
 # sphinx theme
@@ -56,7 +56,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'cdemo-api-doc'
-copyright = u'2017, cdemo'
+copyright = u'2025, cdemo'
 author = u'cdemo'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -203,6 +203,9 @@ epub_exclude_files = ['search.html']
 # Config AutoStructify
 # At the bottom of conf.py
 github_doc_root = 'https://github.com/rtfd/recommonmark/tree/master/doc/'
+
+suppress_warnings = ["config.cache"]
+
 def setup(app):
     app.add_config_value('recommonmark_config', {
         'url_resolver': lambda url: github_doc_root + url,

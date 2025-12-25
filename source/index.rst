@@ -18,6 +18,9 @@ cDemo Rest API V3
    chrome_equipments_api
    chrome_packages_api
    chrome_consumer_info_api
+   records_export_api
+   records_export_detail_api
+   webhook_api
 
 .. Indices and tables
 .. ==================

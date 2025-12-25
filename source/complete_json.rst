@@ -6,7 +6,8 @@ Chrome Equipment
 ==================
 
 .. code-block:: json
-{
+
+  {
     [
         "lang": "EN",
         "header_name": "MECHANICAL",
@@ -20,4 +21,4 @@ Chrome Equipment
         "header_name": "MECHANICAL",
         "description": "Winch-type spare tire carrier (under rear frame)"
     ]
-}
+  }

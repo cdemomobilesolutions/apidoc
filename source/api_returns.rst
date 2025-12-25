@@ -44,6 +44,7 @@ Record Attributes
         "language": "EN",
         "attribute_value": "1GCEC14W1VZ159730"
     }
+
 ``Sample Snipit of of the JSON return``
 
 
@@ -494,8 +495,7 @@ Querying the paginated records API will return a large json response.
                   "chrome_options": [],
                   "chrome_equipments": [],
                   "chrome_consumer_infos": []
-              },
-              ...
+              }
           ]
         }
     ]
